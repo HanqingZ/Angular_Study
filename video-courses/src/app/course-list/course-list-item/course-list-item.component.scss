@@ -1,0 +1,25 @@
+.items {
+  margin: 20px;
+}
+
+.first-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.first-row-detail {
+  display: flex;
+  flex-direction: row;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
