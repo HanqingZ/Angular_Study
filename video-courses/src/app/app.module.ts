@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
-import { CourseListModule } from './course-list/course-list.module';
+import { CourseListModule } from './containers';
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { CourseListModule } from './course-list/course-list.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule,
+    LayoutModule,
     CourseListModule
   ],
   providers: [],

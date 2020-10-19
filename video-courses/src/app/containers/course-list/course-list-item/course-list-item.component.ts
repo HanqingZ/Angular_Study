@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CourseListItem } from '../course-list/course-list-item-module';
+import { CourseListItem } from '../../../modules/course-list-item.module';
 
 @Component({
   selector: 'vc-course-list-item',
