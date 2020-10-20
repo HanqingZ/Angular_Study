@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CourseListItem } from '../../../modules/course-list-item.module';
+import { CourseListItem } from '../../../models/course-list-item.model';
 
 @Component({
-  selector: 'vc-course-list-item',
+  selector: 'app-course-list-item',
   templateUrl: './course-list-item.component.html',
   styleUrls: ['./course-list-item.component.scss']
 })
