@@ -7,7 +7,7 @@ import { CourseListItem } from '../../../models/course-list-item.model';
   styleUrls: ['./course-list-item.component.scss']
 })
 export class CourseListItemComponent implements OnInit {
-
+  Math = Math;
   @Input() item: CourseListItem;
   constructor() { }
 

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseListItem } from '../../../models';
-// import { AddCourseComponent, LoadMoreComponent, SearchControlComponent } from '../../../components'
 
 @Component({
   selector: 'app-course-list',
@@ -35,6 +34,10 @@ export class CourseListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngOnChanges(): void {
+
   }
 
 }

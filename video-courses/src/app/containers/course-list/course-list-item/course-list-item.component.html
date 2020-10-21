@@ -2,15 +2,27 @@
   <div class="first-row">
     <div class="course-item col-10 h1">{{item.title}}</div>
     <div class="first-row-detail">
-      <div class="course-item col-2">1 h {{item.duration % 60}} min</div>
-      <div class="course-item col-2">{{item.creationDate}}</div>
+      <div class="course-item col-2">
+        <img class="icon timeIcon" src="../../../../assets/image/clock-icon.png" alt="">
+        {{Math.floor(item.duration / 60)}}h {{item.duration % 60}}min
+      </div>
+      <div class="course-item col-2">
+        <img class="icon calendarIcon" src="../../../../assets/image/calendar-icon.png" alt="">
+        {{item.creationDate}}
+      </div>
     </div>
   </div>
   <div class="details">
     <div class="description">{{item.description}}</div>
     <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn">Edit</button>
-      <button type="button" class="btn">Delete</button>
+      <button type="button" class="btn">
+        <img class="icon editIcon" src="../../../../assets/image/edit-icon.png" alt="editIcon">
+        <p class="text editIcon">Edit</p>
+      </button>
+      <button type="button" class="btn">
+        <img class="icon editIcon" src="../../../../assets/image/trash-icon.png" alt="editIcon">
+        <p class="text deleteIcon">Delete</p>
+      </button>
     </div>
   </div>
 </div>
