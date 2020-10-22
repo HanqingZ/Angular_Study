@@ -1,0 +1,18 @@
+.breadcrumb {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100vw;
+  height: 64px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+p {
+  color: #464a5a;
+  margin-left: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'SourceSansPro-Regular';
+}
