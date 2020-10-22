@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CourseListItem } from '../../../models/course-list-item.model';
 
 @Component({
@@ -13,5 +13,12 @@ export class CourseListItemComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  deleteRequest(item: CourseListItem) : void {
+    console.log(item.id);
+    this.deleteItem.emit(item);
+  }
+
+  @Output() deleteItem = new EventEmitter<CourseListItem>();
 
 }
