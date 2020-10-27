@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CourseListModule } from '../course-list.module';
 
 import { CourseListItemComponent } from './course-list-item.component';
 
