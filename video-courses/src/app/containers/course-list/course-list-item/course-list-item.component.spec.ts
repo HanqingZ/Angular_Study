@@ -22,12 +22,20 @@ describe('CourseListItemComponent', () => {
       providers: [ CourseListComponent ]
     })
     .compileComponents();
-    fixture = TestBed.createComponent(CourseListItemComponent);
-    component = fixture.componentInstance;
-    spyOn(console, "log");
   });
 
   it('should create', () => {
+    const courseItem: CourseListItem = {
+      id: 1,
+      title: 'Video Course 1. Name tag',
+      creationDate: '08/28/2020',
+      duration: 88,
+      description: "Learn about where you can find course descriptions.",
+      authors: ''
+    }
+
+    fixture = TestBed.createComponent(CourseListItemComponent);
+    component = fixture.componentInstance;
     component.item = courseItem;
     fixture.detectChanges();
 
