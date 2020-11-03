@@ -44,6 +44,7 @@ export class CourseListComponent implements OnInit {
   }
 
   removeItem(item) {
+    console.log("parent component - removeItem", this.presentCourseItems);
     this.presentCourseItems = this.presentCourseItems.filter(ele => ele.id !== item.id)
   }
 

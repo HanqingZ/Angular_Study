@@ -4,7 +4,7 @@
     <div class="first-row-detail">
       <div class="course-item col-2">
         <img class="icon timeIcon" src="../../../../assets/image/clock-icon.png" alt="">
-        {{Math.floor(item.duration / 60)}}h {{item.duration % 60}}min
+        {{modifyDuration(item.duration)}}
       </div>
       <div class="course-item col-2">
         <img class="icon calendarIcon" src="../../../../assets/image/calendar-icon.png" alt="">

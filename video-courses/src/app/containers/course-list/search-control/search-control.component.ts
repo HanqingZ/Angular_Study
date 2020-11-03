@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-control.component.scss']
 })
 export class SearchControlComponent implements OnInit {
+  public searchInput: String;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  enterValue(value): void {
+    console.log(value);
   }
 
 }

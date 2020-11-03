@@ -7,15 +7,18 @@ import { CourseListItem } from '../../../models/course-list-item.model';
   styleUrls: ['./course-list-item.component.scss']
 })
 export class CourseListItemComponent implements OnInit {
-  Math = Math;
   @Input() item: CourseListItem;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  modifyDuration(time) : string {
+    return `${Math.floor(time / 60)}h ${time % 60}min`;
+  }
+
   deleteRequest(item: CourseListItem) : void {
-    console.log(item.id);
+    console.log("child components - deleteRequest", item.id);
     this.deleteItem.emit(item);
   }
 

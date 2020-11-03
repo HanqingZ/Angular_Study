@@ -6,6 +6,7 @@ import { CourseListItemComponent } from './course-list-item/course-list-item.com
 import { AddCourseComponent } from './add-course/add-course.component';
 import { LoadMoreComponent } from './load-more/load-more.component';
 import { SearchControlComponent } from './search-control/search-control.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
     SearchControlComponent
   ],
   imports: [
+    FormsModule,
     CommonModule,
     RouterModule.forChild(routes)
   ],
