@@ -14,7 +14,10 @@ export class CourseListItemComponent implements OnInit {
   }
 
   modifyDuration(time) : string {
-    return `${Math.floor(time / 60)}h ${time % 60}min`;
+    if (time / 60 > 1) {
+      return `${Math.floor(time / 60)}h ${time % 60}min`;
+    }
+    return `${time} min`
   }
 
   deleteRequest(item: CourseListItem) : void {

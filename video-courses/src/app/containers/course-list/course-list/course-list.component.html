@@ -6,5 +6,8 @@
     [item]="item"
     (deleteItem)="removeItem(item)">
   </app-course-list-item>
-  <app-load-more></app-load-more>
+  <app-load-more *ngIf="presentCourseItems.length !== 0"></app-load-more>
+  <div class="emptyCourse" *ngIf="presentCourseItems.length === 0">
+    <p>NO DATA, FELL FREE TO ADD NEW COURSE</p>
+  </div>
 </div>

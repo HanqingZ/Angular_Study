@@ -1,6 +1,12 @@
 <div class="course-list-item items">
   <div class="first-row">
-    <div class="course-item col-10 h1">{{item.title}}</div>
+    <div class="course-item name">
+      <div class="course-item col-10 h1">{{item.title}}</div>
+      <div class="course-item ">
+        <img class="starIcon" *ngIf="item.isFavorite" src="../../../../assets/image/star-icon.png" alt="">
+        <img class="starIcon" *ngIf="!item.isFavorite" src="../../../../assets/image/unstar-icon.png" alt="">
+      </div>
+    </div>
     <div class="first-row-detail">
       <div class="course-item col-2">
         <img class="icon timeIcon" src="../../../../assets/image/clock-icon.png" alt="">
