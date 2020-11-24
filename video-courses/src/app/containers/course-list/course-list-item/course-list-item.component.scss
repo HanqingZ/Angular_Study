@@ -43,7 +43,20 @@ button {
   font-size: 12px;
   background: #009ECC;
   height: 24px;
-  width: 60px;
+  // width: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+}
+.text {
+  margin-left: 2px;
 }
 
 .h1 {
@@ -51,14 +64,3 @@ button {
   font-family: 'SourceSansPro-Semibold';
   margin-bottom: 10px;
 }
-
-
-/* source-sans-pro-regular - latin */
-// @font-face {
-//   font-family: 'Source Sans Pro';
-//   font-style: normal;
-//   font-weight: 400;
-//   src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'),
-//        url('../fonts/source-sans-pro-v14-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-//        url('../fonts/source-sans-pro-v14-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-// }
