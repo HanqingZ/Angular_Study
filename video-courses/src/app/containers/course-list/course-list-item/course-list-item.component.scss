@@ -6,10 +6,18 @@
   background-color: #FFFFFF;
 }
 
+.futureCourse {
+  border: 1px solid #c6def1;
+}
+
+.recentCourse {
+  border: 1px solid #c9e4de;
+}
+
 .name {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .first-row {
@@ -62,8 +70,10 @@ button {
   margin-right: 4px;
 }
 .starIcon {
-  width: 18px;
-  height: 18px;
+  margin-left: 5px;
+  width: 15px;
+  height: 15px;
+  margin-bottom: 10px;
 }
 .text {
   margin-left: 2px;
