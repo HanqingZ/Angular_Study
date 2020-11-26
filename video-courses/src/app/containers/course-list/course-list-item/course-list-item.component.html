@@ -10,12 +10,12 @@
     <div class="first-row-detail">
       <div class="course-item col-2">
         <img class="icon timeIcon" src="../../../../assets/image/clock-icon.png" alt="">
-        <!-- {{item.duration | sortByDuration}} -->
         {{item.duration | sortByDuration}}
+        <!-- {{item.duration}} -->
       </div>
       <div class="course-item col-2">
         <img class="icon calendarIcon" src="../../../../assets/image/calendar-icon.png" alt="">
-        {{item.creationDate}}
+        {{item.creationDate | date: 'd MMM. yyyy'}}
       </div>
     </div>
   </div>

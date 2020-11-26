@@ -7,6 +7,7 @@ import { AddCourseComponent } from './add-course/add-course.component';
 import { LoadMoreComponent } from './load-more/load-more.component';
 import { SearchControlComponent } from './search-control/search-control.component';
 import { FormsModule } from '@angular/forms';
+import { PipeModule } from '../../pipes/pipe.module';
 
 const routes: Routes = [
   {
@@ -26,7 +27,8 @@ const routes: Routes = [
   imports: [
     FormsModule,
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    PipeModule
   ],
   exports: [
     RouterModule,
