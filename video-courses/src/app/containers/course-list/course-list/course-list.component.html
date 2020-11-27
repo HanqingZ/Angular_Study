@@ -2,7 +2,7 @@
   <app-search-control #searchField></app-search-control>
   <app-add-course></app-add-course>
   <app-course-list-item
-    *ngFor="let item of (presentCourseItems | orderBy | filterBy : searchField.searchInput)"
+    *ngFor="let item of (presentCourseItems | filterBy : searchField.searchInput) | orderBy"
     [item]="item"
     (deleteItem)="removeItem(item)">
   </app-course-list-item>

@@ -13,11 +13,11 @@ export class FilterPipe implements PipeTransform {
     if(courseName && courseList.length !== 0) {
       console.log("in filter");
 
-      tmpCourseList = courseList.filter(ele => {
-        console.log(ele.title);
+      tmpCourseList = courseList.filter(ele =>
+        ele.title.toUpperCase().includes(courseName.toUpperCase().trim())
+      )
+      console.log(tmpCourseList);
 
-        ele.title.includes(courseName)
-      })
     } else {
       tmpCourseList = courseList;
     }
