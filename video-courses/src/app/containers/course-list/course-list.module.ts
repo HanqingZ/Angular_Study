@@ -8,6 +8,7 @@ import { LoadMoreComponent } from './load-more/load-more.component';
 import { SearchControlComponent } from './search-control/search-control.component';
 import { FormsModule } from '@angular/forms';
 import { PipeModule } from '../../pipes/pipe.module';
+import { DirectiveModule } from '../../directive/directive.module';
 
 const routes: Routes = [
   {
@@ -28,7 +29,8 @@ const routes: Routes = [
     FormsModule,
     CommonModule,
     RouterModule.forChild(routes),
-    PipeModule
+    PipeModule,
+    DirectiveModule
   ],
   exports: [
     RouterModule,
