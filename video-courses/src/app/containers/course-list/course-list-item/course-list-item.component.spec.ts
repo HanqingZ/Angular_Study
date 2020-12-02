@@ -3,13 +3,14 @@ import { CourseListItem } from 'src/app/models';
 import { CourseListComponent } from '../course-list/course-list.component';
 
 import { CourseListItemComponent } from './course-list-item.component';
+import { DurationPipe } from "../../../pipes/duration.pipe";
 
 describe('CourseListItemComponent', () => {
   let component: CourseListItemComponent;
   let fixture: ComponentFixture<CourseListItemComponent>;
   const courseItem: CourseListItem = {
     id: 1,
-    title: 'Video Course 1. Name tag',
+    title: 'Video Course',
     creationDate: '08/28/2020',
     duration: 88,
     description: "Learn about where you can find course descriptions.",
@@ -19,7 +20,7 @@ describe('CourseListItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CourseListItemComponent ],
+      declarations: [ CourseListItemComponent, DurationPipe ],
       providers: [ CourseListComponent ]
     })
     .compileComponents();
