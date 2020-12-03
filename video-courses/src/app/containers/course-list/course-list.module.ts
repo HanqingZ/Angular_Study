@@ -9,6 +9,7 @@ import { SearchControlComponent } from './search-control/search-control.componen
 import { FormsModule } from '@angular/forms';
 import { PipeModule } from '../../pipes/pipe.module';
 import { DirectiveModule } from '../../directive/directive.module';
+import { AlertComponent } from './alert/alert.component';
 
 const routes: Routes = [
   {
@@ -23,7 +24,8 @@ const routes: Routes = [
     CourseListItemComponent,
     AddCourseComponent,
     LoadMoreComponent,
-    SearchControlComponent
+    SearchControlComponent,
+    AlertComponent
   ],
   imports: [
     FormsModule,
@@ -37,7 +39,8 @@ const routes: Routes = [
     CourseListComponent,
     AddCourseComponent,
     LoadMoreComponent,
-    SearchControlComponent
+    SearchControlComponent,
+    AlertComponent
   ]
 })
 export class CourseListModule { }
