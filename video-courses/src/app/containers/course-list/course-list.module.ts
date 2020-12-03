@@ -8,8 +8,14 @@ import { LoadMoreComponent } from './load-more/load-more.component';
 import { SearchControlComponent } from './search-control/search-control.component';
 import { PopupComponent } from './popup/popup.component';
 import { FormsModule } from '@angular/forms';
+<<<<<<< master
 import { ToolsModule } from '../../tools/tools.module';
 import { LayoutModule } from '../../layout/layout.module'
+=======
+import { PipeModule } from '../../pipes/pipe.module';
+import { DirectiveModule } from '../../directive/directive.module';
+import { AlertComponent } from './alert/alert.component';
+>>>>>>> Add service for courses
 
 const routes: Routes = [
   {
@@ -25,7 +31,11 @@ const routes: Routes = [
     AddCourseComponent,
     LoadMoreComponent,
     SearchControlComponent,
+<<<<<<< master
     PopupComponent
+=======
+    AlertComponent
+>>>>>>> Add service for courses
   ],
   imports: [
     FormsModule,
@@ -40,7 +50,11 @@ const routes: Routes = [
     AddCourseComponent,
     LoadMoreComponent,
     SearchControlComponent,
+<<<<<<< master
     PopupComponent
+=======
+    AlertComponent
+>>>>>>> Add service for courses
   ]
 })
 export class CourseListModule { }

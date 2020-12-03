@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
+<<<<<<< master
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 
 import { CourseListItem } from '../models/course-list-item.model';
+=======
+import { CourseListItem } from '../models/course-list-item.model'
+>>>>>>> Add service for courses
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +15,7 @@ import { CourseListItem } from '../models/course-list-item.model';
 export class CoursesService {
   public courseItems: Array<CourseListItem>
 
+<<<<<<< master
   constructor(private http: HttpClient) {
     // this.courseItems = [
     //   {
@@ -75,5 +80,63 @@ export class CoursesService {
         return data;
       })
     });
+=======
+  constructor() {
+    this.courseItems = [
+      {
+        id: 1,
+        title: 'Video Course 1',
+        creationDate: '12/8/2020',
+        duration: 48,
+        description: "Learn about where you can find course descriptions, what information they include, how they work, and details about various components of a course description. Course descriptions report information about a university or college's classes. They're published both in course catalogs that outline degree requirements and in course schedules that contain descriptions for all courses offered during a particular semester.",
+        authors: '',
+        isFavorite: false
+      },
+      {
+        id: 2,
+        title: 'Video Course 2',
+        creationDate: '11/28/2020',
+        duration: 88,
+        description: "Learn about where you can find course descriptions, what information they include, how they work, and details about various components of a course description. Course descriptions report information about a university or college's classes. They're published both in course catalogs that outline degree requirements and in course schedules that contain descriptions for all courses offered during a particular semester.",
+        authors: '',
+        isFavorite: true
+      },
+      {
+        id: 3,
+        title: 'Angular Training',
+        creationDate: '08/28/2020',
+        duration: 88,
+        description: "Learn about where you can find course descriptions, what information they include, how they work, and details about various components of a course description. Course descriptions report information about a university or college's classes. They're published both in course catalogs that outline degree requirements and in course schedules that contain descriptions for all courses offered during a particular semester.",
+        authors: '',
+        isFavorite: false
+      }
+    ]
+  }
+
+  getCourseList(): CourseListItem[] {
+    return this.courseItems;
+  }
+
+  createCourseItem(id, title, creationDate, duration, description, authors, isFavorite = false): void {
+    this.courseItems.push({ id, title, creationDate, duration, description, authors, isFavorite });
+  }
+
+  getItemById(id: Number): CourseListItem[] {
+    return this.courseItems.filter(ele => ele.id === id);
+  }
+
+  updateItem(courseItem: CourseListItem): void {
+    this.courseItems.map(ele => {
+      if(ele.id === courseItem.id) {
+        ele = courseItem
+      }
+    })
+    console.log(this.courseItems);
+  }
+
+  deleteItemById(id: Number): CourseListItem[] {
+    this.courseItems = this.courseItems.filter(ele => ele.id !== id);
+    return this.courseItems;
+>>>>>>> Add service for courses
   }
 }

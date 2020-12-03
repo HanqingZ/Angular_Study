@@ -10,6 +10,7 @@ import { CoursesService } from '../../../service/courses.service';
 })
 export class CourseListComponent implements OnInit {
   courseItems: CourseListItem[];
+<<<<<<< master
   currentItem: CourseListItem;
   searchKeyword: string;
   deletePopup: Boolean = false;
@@ -59,5 +60,30 @@ export class CourseListComponent implements OnInit {
     const result = this.coursesService.deleteItemById(this.currentItem.id)
     this.courseItems = result.length === 0 ? undefined : result
     this.changeDetectorRef.detectChanges()
+=======
+  searchKeyword: string;
+  deletePopup: Boolean = false;
+  deleteAlert: Object;
+
+  constructor(private coursesService: CoursesService) { }
+
+  ngOnInit(): void {
+    this.courseItems = this.coursesService.getCourseList();
+    // this.presentCourseItems = this.courseItems
+  }
+
+  OnClickRemovePopup(item) {
+    this.deletePopup = true;
+    this.deleteAlert = {
+      title: "Delete course?",
+      description: `Are you sure you want to delete /n${item.title}?`,
+      submigMsg: ", delete"
+    }
+  }
+
+  removeItem(item) {
+    console.log("parent component - removeItem", this.courseItems);
+    this.courseItems = this.coursesService.deleteItemById(item.id);
+>>>>>>> Add service for courses
   }
 }
