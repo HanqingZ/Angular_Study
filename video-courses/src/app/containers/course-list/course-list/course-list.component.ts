@@ -18,33 +18,29 @@ import { CoursesService } from '../../../service/courses.service';
 })
 export class CourseListComponent implements OnInit {
   courseItems: CourseListItem[];
-<<<<<<< master
-<<<<<<< master
-  currentItem: CourseListItem;
   searchKeyword: string;
   deletePopup: Boolean = false;
-<<<<<<< master
-<<<<<<< master
-  pageTitle: string = 'Courses';
+  deleteAlert: Object;
 
-  constructor(
-    private changeDetectorRef: ChangeDetectorRef,
-    private coursesService: CoursesService
-  ) {}
+  constructor(private coursesService: CoursesService) { }
 
   ngOnInit(): void {
-    this.coursesService.getMoreCourse(0).subscribe((data: CourseListItem[]) => {
-      this.courseItems = data.length === 0 ? undefined : data;
-      this.changeDetectorRef.detectChanges()
-    });
+    this.courseItems = this.coursesService.getCourseList();
+    // this.presentCourseItems = this.courseItems
   }
 
-  handleClickMore($event): void {
-    this.coursesService.getMoreCourse(this.courseItems.length)
-      .subscribe((data: CourseListItem[]) => {
-        this.courseItems = data;
-        this.changeDetectorRef.detectChanges()
-      })
+  OnClickRemovePopup(item) {
+    this.deletePopup = true;
+    this.deleteAlert = {
+      title: "Delete course?",
+      description: `Are you sure you want to delete /n${item.title}?`,
+      submigMsg: ", delete"
+    }
+  }
+
+  removeItem(item) {
+    console.log("parent component - removeItem", this.courseItems);
+    this.courseItems = this.coursesService.deleteItemById(item.id);
   }
 
   search(input): void {

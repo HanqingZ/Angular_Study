@@ -22,20 +22,7 @@ import { LayoutModule } from '../../layout/layout.module'
 =======
 import { PipeModule } from '../../pipes/pipe.module';
 import { DirectiveModule } from '../../directive/directive.module';
-<<<<<<< master
-<<<<<<< master
 import { AlertComponent } from './alert/alert.component';
->>>>>>> Add service for courses
-=======
->>>>>>> Add popup
-=======
-=======
-import { ToolsModule } from '../../tools/tools.module';
->>>>>>> Add auth guard for several pages
-import { LayoutModule } from '../../layout/layout.module'
->>>>>>> Add Delete popup
-=======
->>>>>>> Add loading for all services all
 
 const routes: Routes = [
   {
@@ -51,15 +38,7 @@ const routes: Routes = [
     AddCourseComponent,
     LoadMoreComponent,
     SearchControlComponent,
-<<<<<<< master
-<<<<<<< master
-    PopupComponent
-=======
     AlertComponent
->>>>>>> Add service for courses
-=======
-    PopupComponent
->>>>>>> Add popup
   ],
   imports: [
     FormsModule,
@@ -88,19 +67,7 @@ const routes: Routes = [
     AddCourseComponent,
     LoadMoreComponent,
     SearchControlComponent,
-<<<<<<< master
-<<<<<<< master
-<<<<<<< master
-    PopupComponent
-=======
     AlertComponent
->>>>>>> Add service for courses
-=======
-    // AlertComponent,
-=======
->>>>>>> Add Delete popup
-    PopupComponent
->>>>>>> Add popup
   ]
 })
 export class CourseListModule { }
