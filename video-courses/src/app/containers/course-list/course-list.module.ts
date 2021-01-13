@@ -14,8 +14,11 @@ import { LayoutModule } from '../../layout/layout.module'
 =======
 import { PipeModule } from '../../pipes/pipe.module';
 import { DirectiveModule } from '../../directive/directive.module';
+<<<<<<< master
 import { AlertComponent } from './alert/alert.component';
 >>>>>>> Add service for courses
+=======
+>>>>>>> Add popup
 
 const routes: Routes = [
   {
@@ -32,10 +35,14 @@ const routes: Routes = [
     LoadMoreComponent,
     SearchControlComponent,
 <<<<<<< master
+<<<<<<< master
     PopupComponent
 =======
     AlertComponent
 >>>>>>> Add service for courses
+=======
+    PopupComponent
+>>>>>>> Add popup
   ],
   imports: [
     FormsModule,
@@ -51,10 +58,15 @@ const routes: Routes = [
     LoadMoreComponent,
     SearchControlComponent,
 <<<<<<< master
+<<<<<<< master
     PopupComponent
 =======
     AlertComponent
 >>>>>>> Add service for courses
+=======
+    // AlertComponent,
+    PopupComponent
+>>>>>>> Add popup
   ]
 })
 export class CourseListModule { }

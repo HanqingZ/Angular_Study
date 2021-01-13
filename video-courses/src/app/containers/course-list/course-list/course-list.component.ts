@@ -63,7 +63,7 @@ export class CourseListComponent implements OnInit {
 =======
   searchKeyword: string;
   deletePopup: Boolean = false;
-  deleteAlert: Object;
+  // deleteAlert: Object;
 
   constructor(private coursesService: CoursesService) { }
 
@@ -74,11 +74,11 @@ export class CourseListComponent implements OnInit {
 
   OnClickRemovePopup(item) {
     this.deletePopup = true;
-    this.deleteAlert = {
-      title: "Delete course?",
-      description: `Are you sure you want to delete /n${item.title}?`,
-      submigMsg: ", delete"
-    }
+    // this.deleteAlert = {
+    //   title: "Delete course?",
+    //   description: `Are you sure you want to delete /n${item.title}?`,
+    //   submigMsg: ", delete"
+    // }
   }
 
   removeItem(item) {
