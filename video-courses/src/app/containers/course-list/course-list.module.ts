@@ -26,7 +26,7 @@ const routes: Routes = [
     AddCourseComponent,
     LoadMoreComponent,
     SearchControlComponent,
-    AlertComponent
+    PopupComponent
   ],
   imports: [
     FormsModule,
