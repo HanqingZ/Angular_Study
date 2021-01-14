@@ -21,6 +21,7 @@ import { LayoutModule } from '../../layout/layout.module'
 =======
 import { PipeModule } from '../../pipes/pipe.module';
 import { DirectiveModule } from '../../directive/directive.module';
+import { LayoutModule } from '../../layout/layout.module'
 
 const routes: Routes = [
   {
@@ -49,15 +50,7 @@ const routes: Routes = [
 =======
     PipeModule,
     DirectiveModule,
->>>>>>> Add Delete popup
-=======
-    ToolsModule,
->>>>>>> Add auth guard for several pages
     LayoutModule
-=======
-    LayoutModule,
-    LoadingModule
->>>>>>> Add loading for all services all
   ],
   exports: [
     RouterModule,
@@ -65,7 +58,6 @@ const routes: Routes = [
     AddCourseComponent,
     LoadMoreComponent,
     SearchControlComponent,
-    // AlertComponent,
     PopupComponent
   ]
 })
