@@ -34,75 +34,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-<<<<<<< master
-<<<<<<< master
-<<<<<<< master
-    path: 'courses/new',
-    loadChildren: AddCourseComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'courses/:id',
-    loadChildren: AddCourseComponent,
-    canActivate: [AuthGuard]
-  },
-  {
     path: 'login',
-    loadChildren: LoginComponent
-  },
-  {
-    path: 'error',
-    loadChildren: DebugComponent
-  },
-  {
-    path: "**",
-    loadChildren: DebugComponent
-=======
-=======
-    path: 'addcourse',
-=======
-    path: 'courses/new',
-    loadChildren: AddCourseComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'courses/:id',
-<<<<<<< master
-<<<<<<< master
->>>>>>> Complete Debug page and modify router
-    loadChildren: () => import('./containers/add-course/add-course.module').then(m => m.AddCourseModule)
-=======
-    loadChildren: () => import('./containers/add-course/add-course.module').then(m => m.AddCourseModule),
-=======
-    loadChildren: AddCourseComponent,
->>>>>>> Add auth guard for add course and edit course
-    canActivate: [AuthGuard]
->>>>>>> Add auth guard for several pages
-  },
-  {
->>>>>>> Add-Course page
-    path: 'login',
-<<<<<<< master
     loadChildren: () => import('./containers/login/login.module').then(m => m.LoginModule)
-<<<<<<< master
->>>>>>> Add Login page
-=======
-=======
-    loadChildren: LoginComponent
->>>>>>> Add auth guard for add course and edit course
-  },
-  {
-    path: 'error',
-    loadChildren: DebugComponent
-  },
-  {
-    path: "**",
-<<<<<<< master
-    loadChildren: () => import('./containers/debug/debug.module').then(m => m.DebugModule)
->>>>>>> Complete Debug page and modify router
-=======
-    loadChildren: DebugComponent
->>>>>>> Add auth guard for add course and edit course
   }
 ];
 
