@@ -1,6 +1,11 @@
 <div class="main">
+<<<<<<< master
   <app-breadcrumbs [title]="pageTitle"></app-breadcrumbs>
   <app-search-control #searchField (searchItem)="search($event)"></app-search-control>
+=======
+  <app-breadcrumbs></app-breadcrumbs>
+  <app-search-control #searchField></app-search-control>
+>>>>>>> Add Delete popup
   <app-add-course></app-add-course>
 <<<<<<< master
 
@@ -36,6 +41,7 @@
     <p>NO DATA, FELL FREE TO ADD NEW COURSE</p>
   </div>
 
+<<<<<<< master
   <app-popup></app-popup>
 
   <!-- <app-alert
@@ -46,4 +52,11 @@
 =======
   ></app-alert> -->
 >>>>>>> Add popup
+=======
+  <app-popup *ngIf="deletePopup"
+    (closePopup)="cancelPopup($event)"
+    (submitDelete)="removeItem($event)"
+    [itemTitle]="currentItem.title"
+  ></app-popup>
+>>>>>>> Add Delete popup
 </div>

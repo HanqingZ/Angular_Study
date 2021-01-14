@@ -15,10 +15,14 @@ import { LayoutModule } from '../../layout/layout.module'
 import { PipeModule } from '../../pipes/pipe.module';
 import { DirectiveModule } from '../../directive/directive.module';
 <<<<<<< master
+<<<<<<< master
 import { AlertComponent } from './alert/alert.component';
 >>>>>>> Add service for courses
 =======
 >>>>>>> Add popup
+=======
+import { LayoutModule } from '../../layout/layout.module'
+>>>>>>> Add Delete popup
 
 const routes: Routes = [
   {
@@ -48,7 +52,12 @@ const routes: Routes = [
     FormsModule,
     CommonModule,
     RouterModule.forChild(routes),
+<<<<<<< master
     ToolsModule,
+=======
+    PipeModule,
+    DirectiveModule,
+>>>>>>> Add Delete popup
     LayoutModule
   ],
   exports: [
@@ -59,12 +68,15 @@ const routes: Routes = [
     SearchControlComponent,
 <<<<<<< master
 <<<<<<< master
+<<<<<<< master
     PopupComponent
 =======
     AlertComponent
 >>>>>>> Add service for courses
 =======
     // AlertComponent,
+=======
+>>>>>>> Add Delete popup
     PopupComponent
 >>>>>>> Add popup
   ]

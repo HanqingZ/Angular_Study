@@ -1,8 +1,12 @@
 <<<<<<< master
+<<<<<<< master
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 =======
 import { Component, OnInit } from '@angular/core';
 >>>>>>> Add popup
+=======
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+>>>>>>> Add Delete popup
 
 @Component({
   selector: 'app-popup',
@@ -11,9 +15,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopupComponent implements OnInit {
 <<<<<<< master
+<<<<<<< master
   @Input() itemTitle: string;
 =======
 >>>>>>> Add popup
+=======
+  @Input() itemTitle: string;
+>>>>>>> Add Delete popup
 
   constructor() { }
 
@@ -21,6 +29,9 @@ export class PopupComponent implements OnInit {
   }
 
 <<<<<<< master
+<<<<<<< master
+=======
+>>>>>>> Add Delete popup
   cancelPopup(): void {
     this.closePopup.emit()
   }
@@ -31,6 +42,9 @@ export class PopupComponent implements OnInit {
 
   @Output() closePopup = new EventEmitter();
   @Output() submitDelete = new EventEmitter();
+<<<<<<< master
 =======
 >>>>>>> Add popup
+=======
+>>>>>>> Add Delete popup
 }
