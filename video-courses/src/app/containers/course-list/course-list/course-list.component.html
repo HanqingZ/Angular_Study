@@ -1,4 +1,5 @@
 <div class="main">
+  <app-breadcrumbs></app-breadcrumbs>
   <app-search-control #searchField></app-search-control>
   <app-add-course></app-add-course>
   <app-course-list-item
@@ -11,9 +12,9 @@
     <p>NO DATA, FELL FREE TO ADD NEW COURSE</p>
   </div>
 
-  <app-popup></app-popup>
-
-  <!-- <app-alert
-    [alertMsg]="deleteAlert"
-  ></app-alert> -->
+  <app-popup *ngIf="deletePopup"
+    (closePopup)="cancelPopup($event)"
+    (submitDelete)="removeItem($event)"
+    [itemTitle]="currentItem.title"
+  ></app-popup>
 </div>

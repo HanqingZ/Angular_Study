@@ -9,9 +9,9 @@ import { CoursesService } from '../../../service/courses.service';
 })
 export class CourseListComponent implements OnInit {
   courseItems: CourseListItem[];
+  currentItem: CourseListItem;
   searchKeyword: string;
   deletePopup: Boolean = false;
-  // deleteAlert: Object;
 
   constructor(private coursesService: CoursesService) { }
 
@@ -20,17 +20,20 @@ export class CourseListComponent implements OnInit {
     // this.presentCourseItems = this.courseItems
   }
 
-  OnClickRemovePopup(item) {
-    this.deletePopup = true;
-    // this.deleteAlert = {
-    //   title: "Delete course?",
-    //   description: `Are you sure you want to delete /n${item.title}?`,
-    //   submigMsg: ", delete"
-    // }
+  cancelPopup(): void {
+    this.currentItem = null;
+    this.deletePopup = false;
+    console.log("Close Popup");
   }
 
-  removeItem(item) {
+  OnClickRemovePopup(item): void {
+    this.currentItem = item;
+    this.deletePopup = true;
+  }
+
+  removeItem(): void {
     console.log("parent component - removeItem", this.courseItems);
-    this.courseItems = this.coursesService.deleteItemById(item.id);
+    this.deletePopup = false;
+    this.courseItems = this.coursesService.deleteItemById(this.currentItem.id);
   }
 }
