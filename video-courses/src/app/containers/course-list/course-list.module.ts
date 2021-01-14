@@ -10,6 +10,7 @@ import { PopupComponent } from './popup/popup.component';
 import { FormsModule } from '@angular/forms';
 import { PipeModule } from '../../pipes/pipe.module';
 import { DirectiveModule } from '../../directive/directive.module';
+import { LayoutModule } from '../../layout/layout.module'
 
 const routes: Routes = [
   {
@@ -32,7 +33,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     PipeModule,
-    DirectiveModule
+    DirectiveModule,
+    LayoutModule
   ],
   exports: [
     RouterModule,
@@ -40,7 +42,6 @@ const routes: Routes = [
     AddCourseComponent,
     LoadMoreComponent,
     SearchControlComponent,
-    // AlertComponent,
     PopupComponent
   ]
 })
