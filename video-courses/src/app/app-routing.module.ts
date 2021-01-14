@@ -18,6 +18,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+<<<<<<< master
     path: 'courses/new',
     loadChildren: AddCourseComponent,
     canActivate: [AuthGuard]
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: "**",
     loadChildren: DebugComponent
+=======
+    path: 'login',
+    loadChildren: () => import('./containers/login/login.module').then(m => m.LoginModule)
+>>>>>>> Add Login page
   }
 ];
 

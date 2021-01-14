@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
+<<<<<<< master
 import { HttpClient } from '@angular/common/http';
 
 import { environment } from '../../environments/environment';
 import { UserModule } from '../models/user.model';
 import { TokenModel } from '../models/token.model';
+=======
+import { UserModule } from '../models/user.model';
+>>>>>>> Add Login page
 
 @Injectable({
   providedIn: 'root'
 })
+<<<<<<< master
 export class AuthService {
   existUser: UserModule[];
   isLogin = null;
@@ -64,5 +69,26 @@ export class AuthService {
         localStorage.setItem("username", data.name.first)
       }
     })
+=======
+export class AuthServiceService {
+  currentUser: UserModule;
+
+  constructor() { }
+
+  login(token) {
+
+  }
+
+  logout(token) {
+
+  }
+
+  isAuthenticated(): Boolean {
+    return true;
+  }
+
+  getUserInfo(): UserModule {
+    return this.currentUser;
+>>>>>>> Add Login page
   }
 }
