@@ -2,7 +2,7 @@
   <div class="loginBox">
     <div class="mainTitle">
       <div class="title">Login</div>
-      <div class="notification">Wrong e-mail or password</div>
+      <div class="notification" *ngIf="loginFailed">Wrong e-mail or password</div>
     </div>
     <div class="login email">
       <div class="titre">
@@ -20,7 +20,10 @@
     </div>
     <div class="submit">
       <button class="forgetPassword">Forget password?</button>
-      <button class="btn button-login">Login</button>
+      <div class="btn-group">
+        <button class="btn button-login grey" *ngIf="loginFailed" disabled="disabled">Login</button>
+        <button class="btn button-login" *ngIf="!loginFailed">Login</button>
+      </div>
     </div>
   </div>
 </div>
