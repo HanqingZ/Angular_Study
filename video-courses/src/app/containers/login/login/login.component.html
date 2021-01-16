@@ -3,10 +3,14 @@
     <div class="mainTitle">
       <div class="title">Login</div>
 <<<<<<< master
+<<<<<<< master
       <div class="notification" *ngIf="loginFailed">Wrong e-mail or password</div>
 =======
       <div class="notification">Wrong e-mail or password</div>
 >>>>>>> Add Login page
+=======
+      <div class="notification" *ngIf="loginFailed">Wrong e-mail or password</div>
+>>>>>>> Add authentication logic
     </div>
     <div class="login email">
       <div class="titre">
@@ -38,8 +42,15 @@
     </div>
     <div class="submit">
       <button class="forgetPassword">Forget password?</button>
+<<<<<<< master
       <button class="btn button-login">Login</button>
 >>>>>>> Add Login page
+=======
+      <div class="btn-group">
+        <button class="btn button-login grey" *ngIf="loginFailed" disabled="disabled">Login</button>
+        <button class="btn button-login" *ngIf="!loginFailed">Login</button>
+      </div>
+>>>>>>> Add authentication logic
     </div>
   </div>
 </div>

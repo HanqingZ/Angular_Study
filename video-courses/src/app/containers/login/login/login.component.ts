@@ -4,7 +4,11 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../../service/auth-service.service';
 =======
 import { Component, OnInit } from '@angular/core';
+<<<<<<< master
 >>>>>>> Add Login page
+=======
+import { AuthServiceService } from '../../../service/auth-service.service';
+>>>>>>> Add authentication logic
 
 @Component({
   selector: 'app-login',
@@ -46,6 +50,7 @@ export class LoginComponent implements OnInit {
 =======
   email: String;
   password: String;
+  loginFailed: Boolean = true;
 
   constructor() { }
 
