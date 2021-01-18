@@ -9,20 +9,20 @@
         <p>Email:</p>
         <p class="required">*required</p>
       </div>
-      <input class="loginInput" type="text" value="{{email}}" placeholder="Enter e-mail">
+      <input class="loginInput" type="text" [(ngModel)]="email" placeholder="Enter e-mail">
     </div>
     <div class="login password">
       <div class="titre">
         <p>Password:</p>
         <p class="required">*required</p>
       </div>
-      <input class="loginInput" type="password" value={{password}} placeholder="Enter password">
+      <input class="loginInput" type="password" [(ngModel)]="password" placeholder="Enter password">
     </div>
     <div class="submit">
       <button class="forgetPassword">Forget password?</button>
       <div class="btn-group">
         <button class="btn button-login grey" *ngIf="loginFailed" disabled="disabled">Login</button>
-        <button class="btn button-login" *ngIf="!loginFailed">Login</button>
+        <button class="btn button-login" *ngIf="!loginFailed" (click)="requestLogin()">Login</button>
       </div>
     </div>
   </div>
