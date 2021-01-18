@@ -5,8 +5,12 @@ import { AuthService } from '../../../service/auth-service.service';
 =======
 import { Component, OnInit } from '@angular/core';
 <<<<<<< master
+<<<<<<< master
 >>>>>>> Add Login page
 =======
+=======
+import { Router } from '@angular/router';
+>>>>>>> Complete Debug page and modify router
 import { AuthServiceService } from '../../../service/auth-service.service';
 <<<<<<< master
 >>>>>>> Add authentication logic
@@ -27,6 +31,7 @@ export class LoginComponent implements OnInit {
   loginFailed: Boolean = false;
 
   constructor(
+<<<<<<< master
     private changeDetectorRef: ChangeDetectorRef,
     private router: Router,
     private authService: AuthService
@@ -63,6 +68,11 @@ export class LoginComponent implements OnInit {
 >>>>>>> Modify login logic
 
   constructor(private authService: AuthServiceService) { }
+=======
+    private router: Router,
+    private authService: AuthServiceService
+  ) { }
+>>>>>>> Complete Debug page and modify router
 
   ngOnInit(): void {
 
@@ -72,15 +82,17 @@ export class LoginComponent implements OnInit {
 >>>>>>> Add Login page
 =======
   requestLogin () {
-    console.log(this.email, this.password);
-
-    Md5.hashStr(this.password)
     const userInfo = {
       email: this.email,
       password: Md5.hashStr(this.password)
     }
+
     const result = this.authService.login(userInfo)
+    if(result.code === 0) {
+      this.router.navigate(['/courses'])
+    }
     console.log(result.message);
+
   }
 >>>>>>> Modify login logic
 }

@@ -92,17 +92,13 @@ export class AuthServiceService {
 
   login(userInfo) {
     if (userInfo?.email && userInfo?.password) {
-      this.existUser.map(ele => {
-        console.log(userInfo);
+      for(let i = 0; i < this.existUser.length; i++) {
+        const ele = this.existUser[i]
         if(ele.email == userInfo.email && userInfo.password == ele.password) {
-          console.log(true);
           this.currentUser = ele;
           return { code: 0, message:`logged in successfully` }
-          console.log(this.currentUser);
-
         }
-
-      })
+      }
     }
     return { code: 400, message: "error" }
   }
