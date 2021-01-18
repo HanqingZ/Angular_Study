@@ -18,10 +18,6 @@ const DebugComponent = () => import('./containers/debug/debug.module').then(m =>
 const routes: Routes = [
   {
     path: 'courses',
-<<<<<<< master
-<<<<<<< master
-    loadChildren: CourseListComponent
-=======
     loadChildren: () => import('./containers/course-list/course-list.module').then(m => m.CourseListModule)
 >>>>>>> Complete Debug page and modify router
 =======
@@ -34,12 +30,24 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'addcourse',
+    path: 'courses/new',
+    loadChildren: () => import('./containers/add-course/add-course.module').then(m => m.AddCourseModule)
+  },
+  {
+    path: 'courses/:id',
     loadChildren: () => import('./containers/add-course/add-course.module').then(m => m.AddCourseModule)
   },
   {
     path: 'login',
     loadChildren: () => import('./containers/login/login.module').then(m => m.LoginModule)
+  },
+  {
+    path: 'error',
+    loadChildren: () => import('./containers/debug/debug.module').then(m => m.DebugModule)
+  },
+  {
+    path: "**",
+    loadChildren: () => import('./containers/debug/debug.module').then(m => m.DebugModule)
   }
 ];
 
