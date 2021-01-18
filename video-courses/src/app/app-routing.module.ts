@@ -12,6 +12,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'addcourse',
+    loadChildren: () => import('./containers/add-course/add-course.module').then(m => m.AddCourseModule)
+  },
+  {
     path: 'login',
     loadChildren: () => import('./containers/login/login.module').then(m => m.LoginModule)
   }
