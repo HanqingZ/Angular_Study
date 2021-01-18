@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CourseListItem } from '../../../models';
 import { CoursesService } from '../../../service/courses.service';
 
 @Component({
   selector: 'app-course-list',
   templateUrl: './course-list.component.html',
-  styleUrls: ['./course-list.component.scss']
+  styleUrls: ['./course-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CourseListComponent implements OnInit {
   courseItems: CourseListItem[];
@@ -13,7 +14,10 @@ export class CourseListComponent implements OnInit {
   searchKeyword: string;
   deletePopup: Boolean = false;
 
-  constructor(private coursesService: CoursesService) { }
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private coursesService: CoursesService
+  ) { }
 
   ngOnInit(): void {
     this.courseItems = this.coursesService.getCourseList();
@@ -33,6 +37,7 @@ export class CourseListComponent implements OnInit {
 
   removeItem(): void {
     console.log("parent component - removeItem", this.courseItems);
+    this.changeDetectorRef.markForCheck()
     this.deletePopup = false;
     this.courseItems = this.coursesService.deleteItemById(this.currentItem.id);
   }
