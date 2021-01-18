@@ -85,30 +85,31 @@ export class AuthServiceService {
         firstName: "David",
         lastName: "Minsk",
         email: "example@gmail.com",
-        password: "password"
+        password: "5f4dcc3b5aa765d61d8327deb882cf99"
       }
     ]
   }
 
   login(userInfo) {
-    console.log(Md5.hashStr("password"));
     if (userInfo?.email && userInfo?.password) {
       this.existUser.map(ele => {
-        if(ele.email === userInfo.email){
-          const mdPassword = Md5.hashStr(userInfo.password)
-          if (mdPassword === ele.password) {
-            this.currentUser = ele;
-            return `${ele.firstName} is login`
-          }
+        console.log(userInfo);
+        if(ele.email == userInfo.email && userInfo.password == ele.password) {
+          console.log(true);
+          this.currentUser = ele;
+          return { code: 0, message:`logged in successfully` }
+          console.log(this.currentUser);
+
         }
+
       })
     }
-
-    return "error"
+    return { code: 400, message: "error" }
   }
 
   logout(userInfo) {
     this.currentUser = null;
+    console.log(`logged out`);
   }
 
   isAuthenticated(): Boolean {
