@@ -107,7 +107,7 @@ export class AuthServiceService {
     return { code: 400, message: "error" }
   }
 
-  logout(userInfo) {
+  logout() {
     this.currentUser = null;
     console.log(`logged out`);
   }

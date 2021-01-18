@@ -1,6 +1,12 @@
+<<<<<<< master
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../service/auth-service.service'
+=======
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthServiceService } from '../../service/auth-service.service'
+>>>>>>> Add router to login page
 
 @Component({
   selector: 'app-header',
@@ -10,11 +16,15 @@ import { AuthService } from '../../service/auth-service.service'
 export class HeaderComponent implements OnInit {
   public currentUser;
 
+<<<<<<< master
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
     private router: Router,
     private authService: AuthService
   ) { }
+=======
+  constructor(private router: Router, private authService: AuthServiceService) { }
+>>>>>>> Add router to login page
 
   ngOnInit(): void {
     this.currentUser = this.authService.isAuthenticated();
@@ -22,6 +32,7 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.authService.logout()
+<<<<<<< master
     this.currentUser = false;
     this.router.navigate(['/login']);
     this.changeDetectorRef.detectChanges()
@@ -29,5 +40,8 @@ export class HeaderComponent implements OnInit {
 
   navigateTo() {
     this.router.navigate(['/courses']);
+=======
+    this.router.navigate(['/login']);
+>>>>>>> Add router to login page
   }
 }

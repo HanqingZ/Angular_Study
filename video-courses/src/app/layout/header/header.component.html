@@ -1,6 +1,7 @@
 <nav class="navbar bg-dark">
   <span class="navbar-brand mb-0 h1" (click)="navigateTo()">VIDEO COURSE</span>
   <span class="navbar-brand userinfo">
+<<<<<<< master
     <div class="login-logo" *ngIf="!currentUser; then toLogin else toLogout"></div>
     <ng-template #toLogin>
       <button routerLink="/login">
@@ -13,6 +14,13 @@
       {{currentUser}}
     </ng-template>
     <button (click)="logout()" *ngIf="currentUser">
+=======
+    <button routerLink="/login">
+      <img class="icon userIcon" src="../../../assets/image/person-icon.png" alt="userIcon">
+      User login
+    </button>
+    <button (click)="logout()">
+>>>>>>> Add router to login page
       <img class="icon userIcon" src="../../../assets/image/logout-icon.png" alt="userIcon">
       Log out
     </button>
