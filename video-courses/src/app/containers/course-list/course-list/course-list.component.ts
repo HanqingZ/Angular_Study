@@ -6,7 +6,11 @@ import { CoursesService } from '../../../service/courses.service';
   selector: 'app-course-list',
   templateUrl: './course-list.component.html',
   styleUrls: ['./course-list.component.scss'],
+<<<<<<< master
   changeDetection: ChangeDetectionStrategy.OnPush,
+=======
+  changeDetection: ChangeDetectionStrategy.OnPush
+>>>>>>> Modify with onPush
 })
 export class CourseListComponent implements OnInit {
   courseItems: CourseListItem[];
@@ -68,7 +72,10 @@ export class CourseListComponent implements OnInit {
   searchKeyword: string;
   deletePopup: Boolean = false;
 
-  constructor(private coursesService: CoursesService) { }
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private coursesService: CoursesService
+  ) { }
 
   ngOnInit(): void {
     this.courseItems = this.coursesService.getCourseList();
@@ -89,9 +96,13 @@ export class CourseListComponent implements OnInit {
   removeItem(): void {
     console.log("parent component - removeItem", this.courseItems);
 <<<<<<< master
+<<<<<<< master
     this.courseItems = this.coursesService.deleteItemById(item.id);
 >>>>>>> Add service for courses
 =======
+=======
+    this.changeDetectorRef.markForCheck()
+>>>>>>> Modify with onPush
     this.deletePopup = false;
     this.courseItems = this.coursesService.deleteItemById(this.currentItem.id);
 >>>>>>> Add Delete popup
