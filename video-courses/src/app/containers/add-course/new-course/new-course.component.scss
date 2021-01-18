@@ -1,4 +1,8 @@
 .add-new-course {
+<<<<<<< master
+=======
+  // border: 1px solid black;
+>>>>>>> Add-Course page
   margin: 0 auto;
   max-width: 730px;
   max-height: 636px;
@@ -12,7 +16,13 @@ span {
 
 .new-course {
   max-width: 706px;
+<<<<<<< master
   color: #6C6F80;
+=======
+  // padding-right: 24px;
+  color: #6C6F80;
+  // border: 1px solid black;
+>>>>>>> Add-Course page
 }
 
 .titre {
@@ -22,8 +32,15 @@ span {
   align-items: center;
   color: #474A59;
   width: 100%;
+<<<<<<< master
 }
 .duration, .date{
+=======
+  // border: 1px solid black;
+}
+.duration, .date{
+  width: 30%;
+>>>>>>> Add-Course page
   max-width: 150px;
 }
 .authors {

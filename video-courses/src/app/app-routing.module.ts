@@ -19,6 +19,7 @@ const routes: Routes = [
   },
   {
 <<<<<<< master
+<<<<<<< master
     path: 'courses/new',
     loadChildren: AddCourseComponent,
     canActivate: [AuthGuard]
@@ -40,6 +41,12 @@ const routes: Routes = [
     path: "**",
     loadChildren: DebugComponent
 =======
+=======
+    path: 'addcourse',
+    loadChildren: () => import('./containers/add-course/add-course.module').then(m => m.AddCourseModule)
+  },
+  {
+>>>>>>> Add-Course page
     path: 'login',
     loadChildren: () => import('./containers/login/login.module').then(m => m.LoginModule)
 >>>>>>> Add Login page

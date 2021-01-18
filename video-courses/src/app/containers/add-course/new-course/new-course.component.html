@@ -1,5 +1,8 @@
 <div class="main">
+<<<<<<< master
   <app-breadcrumbs [title]="pageTitle"></app-breadcrumbs>
+=======
+>>>>>>> Add-Course page
   <div class="add-new-course">
     <span>New Course</span>
     <div class="new-course title">
@@ -7,13 +10,18 @@
         <p>Title:</p>
         <p class="required">*required</p>
       </div>
+<<<<<<< master
       <input type="text" [(ngModel)]="courseSelected.name" placeholder="Text input">
+=======
+      <input type="text" value="{{title}}" placeholder="Text input">
+>>>>>>> Add-Course page
     </div>
     <div class="new-course description">
       <div class="titre">
         <p>Description:</p>
         <p class="required">*required</p>
       </div>
+<<<<<<< master
       <textarea [(ngModel)]="courseSelected.description" rows="5" cols="60" name="description" placeholder="Add description"></textarea>
     </div>
     <div class="new-course duration">
@@ -22,24 +30,47 @@
         <p class="required">*required</p>
       </div>
       <input type="number" min="0" [(ngModel)]="courseSelected.length" placeholder="minutes">
+=======
+      <textarea rows="5" cols="60" name="description" placeholder="Add description">
+      </textarea>
+    </div>
+    <div class="new-course duration">
+      <div class="titre">
+        <p>Duration:</p>
+        <p class="required">*required</p>
+      </div>
+      <input type="number" min="0" value={{duration}} placeholder="minutes">
+>>>>>>> Add-Course page
     </div>
     <div class="new-course date">
       <div class="titre">
         <p>Date:</p>
         <p class="required">*required</p>
       </div>
+<<<<<<< master
       <input type="date" [(ngModel)]="courseSelected.date" placeholder="MM/DD/YYYY">
+=======
+      <input type="date" value={{creationDate}} placeholder="MM/DD/YYYY">
+>>>>>>> Add-Course page
     </div>
     <div class="new-course authors">
       <div class="titre">
         <p>Authors:</p>
         <p class="required">*required</p>
       </div>
+<<<<<<< master
       <input type="text" [(ngModel)]="courseSelected.authors.name" placeholder="Start typing">
     </div>
     <div class="btn-group">
       <button class="button cancel" routerLink="/courses">Cancel</button>
       <button class="button submit" (click)="submitCourse()">Save</button>
+=======
+      <input type="text" value={{authors}} placeholder="Start typing">
+    </div>
+    <div class="btn-group">
+      <button class="button cancel" routerLink="/home">Cancel</button>
+      <button class="button submit">Save</button>
+>>>>>>> Add-Course page
     </div>
   </div>
 </div>

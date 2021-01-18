@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< master
 import { Router, ActivatedRoute } from '@angular/router';
 import { CourseListItem } from 'src/app/models/course-list-item.model';
 import { CoursesService } from '../../../service/courses.service'
+=======
+import { CourseListItem } from 'src/app/models';
+>>>>>>> Add-Course page
 
 @Component({
   selector: 'app-new-course',
@@ -9,6 +13,7 @@ import { CoursesService } from '../../../service/courses.service'
   styleUrls: ['./new-course.component.scss']
 })
 export class NewCourseComponent implements OnInit {
+<<<<<<< master
   id: number;
   isAddMode: boolean;
   pageTitle: string = "Courses";
@@ -83,4 +88,18 @@ export class NewCourseComponent implements OnInit {
       }
     }
   }
+=======
+  // public course: CourseListItem
+  title: String;
+  description: String;
+  duration: Number;
+  creationDate: Date;
+  authors: String;
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+>>>>>>> Add-Course page
 }
