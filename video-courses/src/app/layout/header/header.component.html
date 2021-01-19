@@ -1,13 +1,17 @@
 <nav class="navbar bg-dark">
   <span class="navbar-brand mb-0 h1">VIDEO COURSE</span>
   <span class="navbar-brand userinfo">
-    <button routerLink="/login">
-      <img class="icon userIcon" src="../../../assets/image/person-icon.png" alt="userIcon">
-      User login
-    </button>
-    <button (click)="logout()">
-      <img class="icon userIcon" src="../../../assets/image/logout-icon.png" alt="userIcon">
-      Log out
-    </button>
+    <div class="login" >
+      <button routerLink="/login">
+        <img class="icon userIcon" src="../../../assets/image/person-icon.png" alt="userIcon">
+        User login
+      </button>
+    </div>
+    <div class="logout">
+      <button (click)="logout()">
+        <img class="icon userIcon" src="../../../assets/image/logout-icon.png" alt="userIcon">
+        Log out
+      </button>
+    </div>
   </span>
 </nav>

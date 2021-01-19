@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CourseListComponent } from './course-list.component';
-import { OrderByPipe } from '../../../pipes/order-by.pipe';
-import { FilterPipe } from "../../../pipes/filter.pipe";
+import { OrderByPipe } from '../../../tools/pipes/order-by.pipe';
+import { FilterPipe } from "../../../tools/pipes/filter.pipe";
 
 describe('CourseListComponent', () => {
   let component: CourseListComponent;
