@@ -2,6 +2,9 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 <<<<<<< master
+<<<<<<< master
+=======
+>>>>>>> Add routing for course list pages and complete relevant methods
 import { FormsModule } from '@angular/forms';
 import { NewCourseComponent } from './new-course/new-course.component';
 import { LayoutModule } from '../../layout/layout.module'
@@ -23,12 +26,17 @@ const routes: Routes = [
   imports: [
     CommonModule,
 <<<<<<< master
+<<<<<<< master
     RouterModule.forChild(routes),
     FormsModule,
     LayoutModule
 =======
     RouterModule.forChild(routes)
 >>>>>>> Add-Course page
+=======
+    RouterModule.forChild(routes),
+    FormsModule
+>>>>>>> Add routing for course list pages and complete relevant methods
   ],
   exports: [
     RouterModule,

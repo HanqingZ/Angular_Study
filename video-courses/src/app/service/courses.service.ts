@@ -117,21 +117,24 @@ export class CoursesService {
     return this.courseItems;
   }
 
-  createCourseItem(id, title, creationDate, duration, description, authors, isFavorite = false): void {
-    this.courseItems.push({ id, title, creationDate, duration, description, authors, isFavorite });
+  createCourseItem(newCourse: CourseListItem): object {
+    this.courseItems.push(newCourse);
+    return { code: 0 }
   }
 
   getItemById(id: Number): CourseListItem[] {
+    console.log(this.courseItems.filter(ele => ele.id === id));
+
     return this.courseItems.filter(ele => ele.id === id);
   }
 
-  updateItem(courseItem: CourseListItem): void {
+  updateItem(courseItem: CourseListItem): object {
     this.courseItems.map(ele => {
       if(ele.id === courseItem.id) {
         ele = courseItem
       }
     })
-    console.log(this.courseItems);
+    return { code: 0 }
   }
 
   deleteItemById(id: Number): CourseListItem[] {

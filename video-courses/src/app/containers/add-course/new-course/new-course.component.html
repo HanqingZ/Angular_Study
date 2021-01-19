@@ -11,16 +11,21 @@
         <p class="required">*required</p>
       </div>
 <<<<<<< master
+<<<<<<< master
       <input type="text" [(ngModel)]="courseSelected.name" placeholder="Text input">
 =======
       <input type="text" value="{{title}}" placeholder="Text input">
 >>>>>>> Add-Course page
+=======
+      <input type="text" [(ngModel)]="courseSelected.title" placeholder="Text input">
+>>>>>>> Add routing for course list pages and complete relevant methods
     </div>
     <div class="new-course description">
       <div class="titre">
         <p>Description:</p>
         <p class="required">*required</p>
       </div>
+<<<<<<< master
 <<<<<<< master
 <<<<<<< master
       <textarea [(ngModel)]="courseSelected.description" rows="5" cols="60" name="description" placeholder="Add description"></textarea>
@@ -37,14 +42,21 @@
 =======
       <textarea rows="5" cols="60" name="description" placeholder="Add description"></textarea>
 >>>>>>> Modify input css
+=======
+      <textarea [(ngModel)]="courseSelected.description" rows="5" cols="60" name="description" placeholder="Add description"></textarea>
+>>>>>>> Add routing for course list pages and complete relevant methods
     </div>
     <div class="new-course duration">
       <div class="titre">
         <p>Duration:</p>
         <p class="required">*required</p>
       </div>
+<<<<<<< master
       <input type="number" min="0" value={{duration}} placeholder="minutes">
 >>>>>>> Add-Course page
+=======
+      <input type="number" min="0" [(ngModel)]="courseSelected.duration" placeholder="minutes">
+>>>>>>> Add routing for course list pages and complete relevant methods
     </div>
     <div class="new-course date">
       <div class="titre">
@@ -52,16 +64,21 @@
         <p class="required">*required</p>
       </div>
 <<<<<<< master
+<<<<<<< master
       <input type="date" [(ngModel)]="courseSelected.date" placeholder="MM/DD/YYYY">
 =======
       <input type="date" value={{creationDate}} placeholder="MM/DD/YYYY">
 >>>>>>> Add-Course page
+=======
+      <input type="date" [(ngModel)]="courseSelected.creationDate" placeholder="MM/DD/YYYY">
+>>>>>>> Add routing for course list pages and complete relevant methods
     </div>
     <div class="new-course authors">
       <div class="titre">
         <p>Authors:</p>
         <p class="required">*required</p>
       </div>
+<<<<<<< master
 <<<<<<< master
       <input type="text" [(ngModel)]="courseSelected.authors.name" placeholder="Start typing">
     </div>
@@ -75,6 +92,13 @@
       <button class="button cancel" routerLink="/courses">Cancel</button>
       <button class="button submit">Save</button>
 >>>>>>> Add-Course page
+=======
+      <input type="text" [(ngModel)]="courseSelected.authors" placeholder="Start typing">
+    </div>
+    <div class="btn-group">
+      <button class="button cancel" routerLink="/courses">Cancel</button>
+      <button class="button submit" (click)="submitCourse()">Save</button>
+>>>>>>> Add routing for course list pages and complete relevant methods
     </div>
   </div>
 </div>
