@@ -14,13 +14,7 @@ import { LoadMoreComponent } from './load-more/load-more.component';
 import { SearchControlComponent } from './search-control/search-control.component';
 import { PopupComponent } from './popup/popup.component';
 import { FormsModule } from '@angular/forms';
-<<<<<<< master
-<<<<<<< master
 import { ToolsModule } from '../../tools/tools.module';
-import { LayoutModule } from '../../layout/layout.module'
-=======
-import { PipeModule } from '../../pipes/pipe.module';
-import { DirectiveModule } from '../../directive/directive.module';
 import { LayoutModule } from '../../layout/layout.module'
 
 const routes: Routes = [
@@ -43,13 +37,7 @@ const routes: Routes = [
     FormsModule,
     CommonModule,
     RouterModule.forChild(routes),
-<<<<<<< master
-<<<<<<< master
     ToolsModule,
-<<<<<<< master
-=======
-    PipeModule,
-    DirectiveModule,
     LayoutModule
   ],
   exports: [

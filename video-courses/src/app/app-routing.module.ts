@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './tools/auth.guard';
-<<<<<<< master
 
 const CourseListComponent = () => import('./containers/course-list/course-list.module').then(m => m.CourseListModule);
 const AddCourseComponent = () => import('./containers/add-course/add-course.module').then(m => m.AddCourseModule);
@@ -31,11 +30,13 @@ const routes: Routes = [
   },
   {
     path: 'courses/new',
-    loadChildren: () => import('./containers/add-course/add-course.module').then(m => m.AddCourseModule)
+    loadChildren: () => import('./containers/add-course/add-course.module').then(m => m.AddCourseModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'courses/:id',
-    loadChildren: () => import('./containers/add-course/add-course.module').then(m => m.AddCourseModule)
+    loadChildren: () => import('./containers/add-course/add-course.module').then(m => m.AddCourseModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',

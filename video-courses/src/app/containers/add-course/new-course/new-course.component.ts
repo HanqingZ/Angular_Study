@@ -41,7 +41,9 @@ export class NewCourseComponent implements OnInit {
       this.courseSelected = courseEdit
       const dates = courseEdit.creationDate.split('/')
       this.courseSelected.creationDate = `${dates[2]}-${dates[0]}-${dates[1]}`;
-      this.pageTitle = `Courses/${this.courseSelected.title}`
+      this.pageTitle = `Courses / ${this.courseSelected.title}`
+    } else {
+      this.pageTitle = `Courses / New Course`
     }
   }
 
