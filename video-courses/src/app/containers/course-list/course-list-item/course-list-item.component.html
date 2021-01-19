@@ -20,7 +20,7 @@
   <div class="details">
     <div class="description">{{item.description}}</div>
     <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn edit">
+      <button type="button" class="btn edit" (click)="editRequest(item.id)">
         <img class="icon editIcon" src="../../../../assets/image/edit-icon.png" alt="editIcon">
         <p class="text editIcon">Edit</p>
       </button>
