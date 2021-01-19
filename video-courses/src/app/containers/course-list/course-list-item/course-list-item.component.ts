@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router'
 import { CourseListItem } from '../../../models/course-list-item.model';
 
 @Component({
@@ -8,12 +9,22 @@ import { CourseListItem } from '../../../models/course-list-item.model';
 })
 export class CourseListItemComponent implements OnInit {
   @Input() item: CourseListItem;
-  constructor() { }
+
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+
   }
 
-  deleteRequest(item: CourseListItem) : void {
+  editRequest(itemId: Number): void {
+    if(itemId){
+      this.router.navigate([`/courses/${itemId}`])
+    }
+  }
+
+  deleteRequest(item: CourseListItem): void {
     this.deleteItem.emit(item);
     console.log("child components - deleteRequest", item.id);
   }
