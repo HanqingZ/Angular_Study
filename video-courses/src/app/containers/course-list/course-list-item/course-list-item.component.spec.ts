@@ -3,7 +3,7 @@ import { CourseListItem } from 'src/app/models';
 import { CourseListComponent } from '../course-list/course-list.component';
 
 import { CourseListItemComponent } from './course-list-item.component';
-import { DurationPipe } from "../../../pipes/duration.pipe";
+import { DurationPipe } from "../../../tools/pipes/duration.pipe";
 
 describe('CourseListItemComponent', () => {
   let component: CourseListItemComponent;
