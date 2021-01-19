@@ -1,15 +1,7 @@
 import { AuthorModel } from './author.model';
 
 export interface CourseListItem {
-<<<<<<< master
-<<<<<<< master
-  id: number;
-  name: string;
-  date: string;
-  length: number;
-=======
   id: Number;
-<<<<<<< master
   title: string;
   creationDate: string;
   duration: number;
