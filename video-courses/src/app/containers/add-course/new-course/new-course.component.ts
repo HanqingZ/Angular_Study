@@ -11,6 +11,7 @@ import { CoursesService } from '../../../service/courses.service'
 export class NewCourseComponent implements OnInit {
   id: Number;
   isAddMode: boolean;
+  pageTitle: string = "Courses";
 
   courseSelected: CourseListItem = {
     id: null,
@@ -40,6 +41,7 @@ export class NewCourseComponent implements OnInit {
       this.courseSelected = courseEdit
       const dates = courseEdit.creationDate.split('/')
       this.courseSelected.creationDate = `${dates[2]}-${dates[0]}-${dates[1]}`;
+      this.pageTitle = `Courses/${this.courseSelected.title}`
     }
   }
 
