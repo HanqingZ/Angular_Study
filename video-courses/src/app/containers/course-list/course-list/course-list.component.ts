@@ -13,6 +13,7 @@ export class CourseListComponent implements OnInit {
   currentItem: CourseListItem;
   searchKeyword: string;
   deletePopup: Boolean = false;
+  pageTitle: string = "Courses";
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
