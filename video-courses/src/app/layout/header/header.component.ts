@@ -14,6 +14,7 @@ import { AuthServiceService } from '../../service/auth-service.service'
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+<<<<<<< master
   public currentUser;
 
 <<<<<<< master
@@ -28,6 +29,20 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentUser = this.authService.isAuthenticated();
+=======
+  currentUser: string;
+
+  constructor(
+    private router: Router,
+    private authService: AuthServiceService
+  ) { }
+
+  ngOnInit(): void {
+    const result = this.authService.getUserInfo()
+    if(result) {
+      this.currentUser = result.firstName;
+    }
+>>>>>>> Add auth guard for several pages
   }
 
   logout() {

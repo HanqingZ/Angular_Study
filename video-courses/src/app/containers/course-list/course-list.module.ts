@@ -9,6 +9,7 @@ import { SearchControlComponent } from './search-control/search-control.componen
 import { PopupComponent } from './popup/popup.component';
 import { FormsModule } from '@angular/forms';
 <<<<<<< master
+<<<<<<< master
 import { ToolsModule } from '../../tools/tools.module';
 import { LayoutModule } from '../../layout/layout.module'
 =======
@@ -21,6 +22,9 @@ import { AlertComponent } from './alert/alert.component';
 =======
 >>>>>>> Add popup
 =======
+=======
+import { ToolsModule } from '../../tools/tools.module';
+>>>>>>> Add auth guard for several pages
 import { LayoutModule } from '../../layout/layout.module'
 >>>>>>> Add Delete popup
 
@@ -53,11 +57,15 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
 <<<<<<< master
+<<<<<<< master
     ToolsModule,
 =======
     PipeModule,
     DirectiveModule,
 >>>>>>> Add Delete popup
+=======
+    ToolsModule,
+>>>>>>> Add auth guard for several pages
     LayoutModule
   ],
   exports: [

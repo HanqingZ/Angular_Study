@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './tools/auth.guard';
+<<<<<<< master
 
 const CourseListComponent = () => import('./containers/course-list/course-list.module').then(m => m.CourseListModule);
 const AddCourseComponent = () => import('./containers/add-course/add-course.module').then(m => m.AddCourseModule);
 const LoginComponent = () => import('./containers/login/login.module').then(m => m.LoginModule);
 const DebugComponent = () => import('./containers/debug/debug.module').then(m => m.DebugModule);
+=======
+>>>>>>> Add auth guard for several pages
 
 const routes: Routes = [
   {
@@ -50,12 +53,18 @@ const routes: Routes = [
     path: 'addcourse',
 =======
     path: 'courses/new',
-    loadChildren: () => import('./containers/add-course/add-course.module').then(m => m.AddCourseModule)
+    loadChildren: () => import('./containers/add-course/add-course.module').then(m => m.AddCourseModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'courses/:id',
+<<<<<<< master
 >>>>>>> Complete Debug page and modify router
     loadChildren: () => import('./containers/add-course/add-course.module').then(m => m.AddCourseModule)
+=======
+    loadChildren: () => import('./containers/add-course/add-course.module').then(m => m.AddCourseModule),
+    canActivate: [AuthGuard]
+>>>>>>> Add auth guard for several pages
   },
   {
 >>>>>>> Add-Course page
