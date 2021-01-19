@@ -105,7 +105,11 @@ export class NewCourseComponent implements OnInit {
 =======
   id: Number;
   isAddMode: boolean;
+<<<<<<< master
 >>>>>>> Add routing for course list pages and complete relevant methods
+=======
+  pageTitle: string = "Courses";
+>>>>>>> Modify breadcrumbs value
 
   courseSelected: CourseListItem = {
     id: null,
@@ -135,6 +139,7 @@ export class NewCourseComponent implements OnInit {
       this.courseSelected = courseEdit
       const dates = courseEdit.creationDate.split('/')
       this.courseSelected.creationDate = `${dates[2]}-${dates[0]}-${dates[1]}`;
+      this.pageTitle = `Courses/${this.courseSelected.title}`
     }
   }
 

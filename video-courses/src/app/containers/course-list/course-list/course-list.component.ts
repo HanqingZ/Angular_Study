@@ -19,6 +19,7 @@ export class CourseListComponent implements OnInit {
   currentItem: CourseListItem;
   searchKeyword: string;
   deletePopup: Boolean = false;
+<<<<<<< master
   pageTitle: string = 'Courses';
 
   constructor(
@@ -71,6 +72,9 @@ export class CourseListComponent implements OnInit {
 >>>>>>> Add Delete popup
   searchKeyword: string;
   deletePopup: Boolean = false;
+=======
+  pageTitle: string = "Courses";
+>>>>>>> Modify breadcrumbs value
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,

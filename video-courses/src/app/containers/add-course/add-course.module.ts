@@ -8,9 +8,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NewCourseComponent } from './new-course/new-course.component';
 import { LayoutModule } from '../../layout/layout.module'
+<<<<<<< master
 =======
 import { NewCourseComponent } from './new-course/new-course.component';
 >>>>>>> Add-Course page
+=======
+>>>>>>> Modify breadcrumbs value
 
 const routes: Routes = [
   {
@@ -35,8 +38,13 @@ const routes: Routes = [
 >>>>>>> Add-Course page
 =======
     RouterModule.forChild(routes),
+<<<<<<< master
     FormsModule
 >>>>>>> Add routing for course list pages and complete relevant methods
+=======
+    FormsModule,
+    LayoutModule
+>>>>>>> Modify breadcrumbs value
   ],
   exports: [
     RouterModule,
