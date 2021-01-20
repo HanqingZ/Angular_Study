@@ -11,7 +11,7 @@ export class FilterPipe implements PipeTransform {
     if(courseName && courseList.length !== 0) {
 
       tmpCourseList = courseList.filter(ele =>
-        ele.title.toUpperCase().includes(courseName.toUpperCase().trim())
+        ele.name.toUpperCase().includes(courseName.toUpperCase().trim())
       )
     } else {
       tmpCourseList = courseList;

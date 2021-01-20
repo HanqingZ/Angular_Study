@@ -10,12 +10,12 @@ describe('CourseListItemComponent', () => {
   let fixture: ComponentFixture<CourseListItemComponent>;
   const courseItem: CourseListItem = {
     id: 1,
-    title: 'Video Course',
-    creationDate: '08/28/2020',
-    duration: 88,
+    name: 'Video Course',
+    date: '08/28/2020',
+    length: 88,
     description: "Learn about where you can find course descriptions.",
-    authors: '',
-    isFavorite: false
+    authors: null,
+    isTopRated: false
   }
 
   beforeEach(async () => {
@@ -39,12 +39,12 @@ describe('CourseListItemComponent', () => {
   it('should create a course with short duration', () => {
     const courseItem1: CourseListItem = {
       id: 1,
-      title: 'Video Course 1. Name tag',
-      creationDate: '08/28/2020',
-      duration: 28,
+      name: 'Video Course 1. Name tag',
+      date: '08/28/2020',
+      length: 28,
       description: "Learn about where you can find course descriptions.",
-      authors: '',
-      isFavorite: false
+      authors: null,
+      isTopRated: false
     }
 
     component.item = courseItem1;
