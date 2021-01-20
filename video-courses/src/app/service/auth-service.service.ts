@@ -17,6 +17,7 @@ import { Md5 } from 'ts-md5/dist/md5';
   providedIn: 'root'
 })
 <<<<<<< master
+<<<<<<< master
 export class AuthService {
   existUser: UserModule[];
   isLogin = null;
@@ -75,6 +76,9 @@ export class AuthService {
     })
 =======
 export class AuthServiceService {
+=======
+export class AuthService {
+>>>>>>> Add auth guard for add course and edit course
   existUser: UserModule[];
   currentUser: UserModule = null;
 

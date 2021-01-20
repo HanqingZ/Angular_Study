@@ -9,11 +9,22 @@ import { UserModule } from './models/user.model';
 })
 export class AppComponent {
   title = 'video-courses';
+<<<<<<< master
+=======
+  user: UserModule;
+>>>>>>> Add auth guard for add course and edit course
 
   constructor(private authService: AuthService) {
   }
 
   ngOnChange(): void {
+<<<<<<< master
+=======
+    const result = this.authService.getUserInfo()
+    if(result) {
+      this.user = result;
+    }
+>>>>>>> Add auth guard for add course and edit course
   }
 
 }

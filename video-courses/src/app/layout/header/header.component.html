@@ -3,15 +3,21 @@
   <span class="navbar-brand userinfo">
 <<<<<<< master
 <<<<<<< master
+<<<<<<< master
     <div class="login-logo" *ngIf="!currentUser; then toLogin else toLogout"></div>
     <ng-template #toLogin>
 =======
     <div class="login" >
 >>>>>>> Add auth guard for several pages
+=======
+    <div class="login-logo" *ngIf="!user; then toLogin else toLogout"></div>
+    <ng-template #toLogin>
+>>>>>>> Add auth guard for add course and edit course
       <button routerLink="/login">
         <img class="icon userIcon" src="../../../assets/image/person-icon.png" alt="userIcon">
         User login
       </button>
+<<<<<<< master
 <<<<<<< master
     </ng-template>
     <ng-template #toLogout>
@@ -38,5 +44,16 @@
       </button>
     </div>
 >>>>>>> Add auth guard for several pages
+=======
+    </ng-template>
+    <ng-template #toLogout>
+      <img class="icon userIcon" src="../../../assets/image/person-icon.png" alt="userIcon">
+      {{user.firstName}}
+    </ng-template>
+    <button (click)="logout()" *ngIf="!user">
+      <img class="icon userIcon" src="../../../assets/image/logout-icon.png" alt="userIcon">
+      Log out
+    </button>
+>>>>>>> Add auth guard for add course and edit course
   </span>
 </nav>

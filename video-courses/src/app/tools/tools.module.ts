@@ -6,6 +6,7 @@ import { OrderByPipe } from './pipes/order-by.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { CourseDateHoverDirective } from './directives/course-date-hover.directive';
 <<<<<<< master
+<<<<<<< master
 
 @NgModule({
   declarations: [DurationPipe, OrderByPipe, FilterPipe, CourseDateHoverDirective],
@@ -13,12 +14,18 @@ import { CourseDateHoverDirective } from './directives/course-date-hover.directi
   exports: [DurationPipe, OrderByPipe,FilterPipe, CourseDateHoverDirective]
 =======
 import { AuthGuard } from './auth.guard';
+=======
+>>>>>>> Add auth guard for add course and edit course
 
 @NgModule({
-  declarations: [DurationPipe, OrderByPipe, FilterPipe, CourseDateHoverDirective, AuthGuard],
+  declarations: [DurationPipe, OrderByPipe, FilterPipe, CourseDateHoverDirective],
   imports: [CommonModule],
+<<<<<<< master
   exports: [DurationPipe, OrderByPipe,FilterPipe, CourseDateHoverDirective, AuthGuard]
 >>>>>>> Add auth guard for several pages
+=======
+  exports: [DurationPipe, OrderByPipe,FilterPipe, CourseDateHoverDirective]
+>>>>>>> Add auth guard for add course and edit course
 })
 
 export class ToolsModule { }

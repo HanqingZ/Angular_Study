@@ -1,4 +1,5 @@
 <<<<<<< master
+<<<<<<< master
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../service/auth-service.service'
@@ -7,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthServiceService } from '../../service/auth-service.service'
 >>>>>>> Add router to login page
+=======
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../../service/auth-service.service'
+>>>>>>> Add auth guard for add course and edit course
 
 @Component({
   selector: 'app-header',
@@ -14,6 +20,7 @@ import { AuthServiceService } from '../../service/auth-service.service'
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+<<<<<<< master
 <<<<<<< master
   public currentUser;
 
@@ -30,19 +37,25 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.currentUser = this.authService.isAuthenticated();
 =======
+=======
+  @Input() user;
+>>>>>>> Add auth guard for add course and edit course
   currentUser: string;
 
   constructor(
     private router: Router,
-    private authService: AuthServiceService
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
+<<<<<<< master
     const result = this.authService.getUserInfo()
     if(result) {
       this.currentUser = result.firstName;
     }
 >>>>>>> Add auth guard for several pages
+=======
+>>>>>>> Add auth guard for add course and edit course
   }
 
   logout() {

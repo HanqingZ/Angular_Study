@@ -10,11 +10,15 @@ import { Component, OnInit } from '@angular/core';
 =======
 =======
 import { Router } from '@angular/router';
+<<<<<<< master
 >>>>>>> Complete Debug page and modify router
 import { AuthServiceService } from '../../../service/auth-service.service';
 <<<<<<< master
 >>>>>>> Add authentication logic
 =======
+=======
+import { AuthService } from '../../../service/auth-service.service';
+>>>>>>> Add auth guard for add course and edit course
 import { Md5 } from 'ts-md5/dist/md5';
 >>>>>>> Modify login logic
 
@@ -70,7 +74,7 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthServiceService) { }
 =======
     private router: Router,
-    private authService: AuthServiceService
+    private authService: AuthService
   ) { }
 >>>>>>> Complete Debug page and modify router
 
