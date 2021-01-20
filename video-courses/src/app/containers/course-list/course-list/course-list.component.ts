@@ -6,29 +6,30 @@ import { CoursesService } from '../../../service/courses.service';
   selector: 'app-course-list',
   templateUrl: './course-list.component.html',
   styleUrls: ['./course-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CourseListComponent implements OnInit {
   courseItems: CourseListItem[];
   currentItem: CourseListItem;
   searchKeyword: string;
   deletePopup: Boolean = false;
-  pageTitle: string = "Courses";
+  pageTitle: string = 'Courses';
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
     private coursesService: CoursesService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    this.courseItems = this.coursesService.getCourseList();
-    // this.presentCourseItems = this.courseItems
+    this.coursesService.getCourseList().subscribe((data: CourseListItem[]) => {
+      this.courseItems = data;
+      this.changeDetectorRef.detectChanges()
+    });
   }
 
   cancelPopup(): void {
     this.currentItem = null;
     this.deletePopup = false;
-    console.log("Close Popup");
   }
 
   OnClickRemovePopup(item): void {
@@ -37,8 +38,7 @@ export class CourseListComponent implements OnInit {
   }
 
   removeItem(): void {
-    console.log("parent component - removeItem", this.courseItems);
-    this.changeDetectorRef.markForCheck()
+    this.changeDetectorRef.markForCheck();
     this.deletePopup = false;
     this.courseItems = this.coursesService.deleteItemById(this.currentItem.id);
   }
