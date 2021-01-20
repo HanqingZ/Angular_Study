@@ -23,6 +23,7 @@ export class CoursesService {
 
 <<<<<<< master
 <<<<<<< master
+<<<<<<< master
   constructor(private http: HttpClient) {
     // this.courseItems = [
     //   {
@@ -92,6 +93,9 @@ export class CoursesService {
 =======
   constructor(private httpClient: HttpClient) {
 >>>>>>> Add http request with course GET api
+=======
+  constructor(private http: HttpClient) {
+>>>>>>> Add login method
     this.courseItems = [
       {
         id: 1,
@@ -124,7 +128,7 @@ export class CoursesService {
   }
 
   getCourseList(): Observable<Object> {
-    return this.httpClient.get(`${environment.apiBaseUrl}courses`)
+    return this.http.get(`${environment.apiBaseUrl}courses`)
   }
 
   createCourseItem(newCourse: CourseListItem): object {

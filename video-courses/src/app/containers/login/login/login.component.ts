@@ -18,9 +18,13 @@ import { AuthServiceService } from '../../../service/auth-service.service';
 =======
 =======
 import { AuthService } from '../../../service/auth-service.service';
+<<<<<<< master
 >>>>>>> Add auth guard for add course and edit course
 import { Md5 } from 'ts-md5/dist/md5';
 >>>>>>> Modify login logic
+=======
+import { TokenModel } from '../../../models/token.model';
+>>>>>>> Add login method
 
 @Component({
   selector: 'app-login',
@@ -88,14 +92,19 @@ export class LoginComponent implements OnInit {
   requestLogin () {
     const userInfo = {
       email: this.email,
-      password: Md5.hashStr(this.password)
+      password: this.password
     }
 
-    const result = this.authService.login(userInfo)
-    if(result.code === 0) {
-      this.router.navigate(['/courses'])
-    }
-    console.log(result.message);
+    let result;
+    this.authService.login(userInfo).subscribe((data: TokenModel) => {
+      console.log(data);
+      result = data
+      if(result?.token) {
+        this.router.navigate(['/courses'])
+      } else {
+        console.log("failed");
+      }
+    });
 
   }
 >>>>>>> Modify login logic
