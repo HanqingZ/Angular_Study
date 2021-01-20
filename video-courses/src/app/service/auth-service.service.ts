@@ -5,7 +5,7 @@ import { Md5 } from 'ts-md5/dist/md5';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthServiceService {
+export class AuthService {
   existUser: UserModule[];
   currentUser: UserModule = null;
 

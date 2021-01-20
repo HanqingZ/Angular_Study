@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthServiceService } from '../../../service/auth-service.service';
+import { AuthService } from '../../../service/auth-service.service';
 import { Md5 } from 'ts-md5/dist/md5';
 
 @Component({
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private authService: AuthServiceService
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
