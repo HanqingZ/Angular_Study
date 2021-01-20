@@ -12,6 +12,7 @@
 >>>>>>> Add Delete popup
   <app-add-course></app-add-course>
 <<<<<<< master
+<<<<<<< master
 
   <div class="emptyCourse" *ngIf="!courseItems else someData">
     <p>NO DATA, FELL FREE TO ADD NEW COURSE</p>
@@ -57,6 +58,22 @@
   ></app-alert> -->
 >>>>>>> Add popup
 =======
+=======
+
+  <div class="emptyCourse" *ngIf="!courseItems else someData">
+    <p>NO DATA, FELL FREE TO ADD NEW COURSE</p>
+  </div>
+
+  <ng-template #someData>
+    <app-course-list-item
+      *ngFor="let item of (courseItems | filterBy : searchField.searchInput) | orderBy"
+      [item]="item"
+      (deleteItem)="OnClickRemovePopup(item)">
+    </app-course-list-item>
+  </ng-template>
+  <app-load-more *ngIf="courseItems?.length >= 5"></app-load-more>
+
+>>>>>>> Add http request with course GET api
   <app-popup *ngIf="deletePopup"
     (closePopup)="cancelPopup($event)"
     (submitDelete)="removeItem($event)"

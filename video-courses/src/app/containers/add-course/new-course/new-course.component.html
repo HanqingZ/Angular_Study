@@ -16,6 +16,7 @@
       </div>
 <<<<<<< master
 <<<<<<< master
+<<<<<<< master
       <input type="text" [(ngModel)]="courseSelected.name" placeholder="Text input">
 =======
       <input type="text" value="{{title}}" placeholder="Text input">
@@ -23,6 +24,9 @@
 =======
       <input type="text" [(ngModel)]="courseSelected.title" placeholder="Text input">
 >>>>>>> Add routing for course list pages and complete relevant methods
+=======
+      <input type="text" [(ngModel)]="courseSelected.name" placeholder="Text input">
+>>>>>>> Add http request with course GET api
     </div>
     <div class="new-course description">
       <div class="titre">
@@ -52,21 +56,26 @@
     </div>
     <div class="new-course duration">
       <div class="titre">
-        <p>Duration:</p>
+        <p>length:</p>
         <p class="required">*required</p>
       </div>
+<<<<<<< master
 <<<<<<< master
       <input type="number" min="0" value={{duration}} placeholder="minutes">
 >>>>>>> Add-Course page
 =======
       <input type="number" min="0" [(ngModel)]="courseSelected.duration" placeholder="minutes">
 >>>>>>> Add routing for course list pages and complete relevant methods
+=======
+      <input type="number" min="0" [(ngModel)]="courseSelected.length" placeholder="minutes">
+>>>>>>> Add http request with course GET api
     </div>
     <div class="new-course date">
       <div class="titre">
         <p>Date:</p>
         <p class="required">*required</p>
       </div>
+<<<<<<< master
 <<<<<<< master
 <<<<<<< master
       <input type="date" [(ngModel)]="courseSelected.date" placeholder="MM/DD/YYYY">
@@ -76,6 +85,9 @@
 =======
       <input type="date" [(ngModel)]="courseSelected.creationDate" placeholder="MM/DD/YYYY">
 >>>>>>> Add routing for course list pages and complete relevant methods
+=======
+      <input type="date" [(ngModel)]="courseSelected.date" placeholder="MM/DD/YYYY">
+>>>>>>> Add http request with course GET api
     </div>
     <div class="new-course authors">
       <div class="titre">

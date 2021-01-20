@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 <<<<<<< master
+<<<<<<< master
 import { HttpClient } from '@angular/common/http';
 
 import { environment } from '../../environments/environment';
@@ -12,6 +13,10 @@ import { UserModule } from '../models/user.model';
 =======
 import { Md5 } from 'ts-md5/dist/md5';
 >>>>>>> Add authentication logic
+=======
+import { HttpClient } from '@angular/common/http';
+import { UserModule } from '../models/user.model';
+>>>>>>> Add http request with course GET api
 
 @Injectable({
   providedIn: 'root'

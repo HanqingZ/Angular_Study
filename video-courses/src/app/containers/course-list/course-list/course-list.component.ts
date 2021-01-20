@@ -7,10 +7,14 @@ import { CoursesService } from '../../../service/courses.service';
   templateUrl: './course-list.component.html',
   styleUrls: ['./course-list.component.scss'],
 <<<<<<< master
+<<<<<<< master
   changeDetection: ChangeDetectionStrategy.OnPush,
 =======
   changeDetection: ChangeDetectionStrategy.OnPush
 >>>>>>> Modify with onPush
+=======
+  changeDetection: ChangeDetectionStrategy.OnPush,
+>>>>>>> Add http request with course GET api
 })
 export class CourseListComponent implements OnInit {
   courseItems: CourseListItem[];
@@ -19,6 +23,7 @@ export class CourseListComponent implements OnInit {
   currentItem: CourseListItem;
   searchKeyword: string;
   deletePopup: Boolean = false;
+<<<<<<< master
 <<<<<<< master
   pageTitle: string = 'Courses';
 
@@ -75,21 +80,25 @@ export class CourseListComponent implements OnInit {
 =======
   pageTitle: string = "Courses";
 >>>>>>> Modify breadcrumbs value
+=======
+  pageTitle: string = 'Courses';
+>>>>>>> Add http request with course GET api
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
     private coursesService: CoursesService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    this.courseItems = this.coursesService.getCourseList();
-    // this.presentCourseItems = this.courseItems
+    this.coursesService.getCourseList().subscribe((data: CourseListItem[]) => {
+      this.courseItems = data;
+      this.changeDetectorRef.detectChanges()
+    });
   }
 
   cancelPopup(): void {
     this.currentItem = null;
     this.deletePopup = false;
-    console.log("Close Popup");
   }
 
   OnClickRemovePopup(item): void {
@@ -98,6 +107,7 @@ export class CourseListComponent implements OnInit {
   }
 
   removeItem(): void {
+<<<<<<< master
     console.log("parent component - removeItem", this.courseItems);
 <<<<<<< master
 <<<<<<< master
@@ -107,6 +117,9 @@ export class CourseListComponent implements OnInit {
 =======
     this.changeDetectorRef.markForCheck()
 >>>>>>> Modify with onPush
+=======
+    this.changeDetectorRef.markForCheck();
+>>>>>>> Add http request with course GET api
     this.deletePopup = false;
     this.courseItems = this.coursesService.deleteItemById(this.currentItem.id);
 >>>>>>> Add Delete popup
