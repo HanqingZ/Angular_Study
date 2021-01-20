@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../service/auth-service.service';
-import { Md5 } from 'ts-md5/dist/md5';
+import { TokenModel } from '../../../models/token.model';
 
 @Component({
   selector: 'app-login',
@@ -25,14 +25,19 @@ export class LoginComponent implements OnInit {
   requestLogin () {
     const userInfo = {
       email: this.email,
-      password: Md5.hashStr(this.password)
+      password: this.password
     }
 
-    const result = this.authService.login(userInfo)
-    if(result.code === 0) {
-      this.router.navigate(['/courses'])
-    }
-    console.log(result.message);
+    let result;
+    this.authService.login(userInfo).subscribe((data: TokenModel) => {
+      console.log(data);
+      result = data
+      if(result?.token) {
+        this.router.navigate(['/courses'])
+      } else {
+        console.log("failed");
+      }
+    });
 
   }
 }

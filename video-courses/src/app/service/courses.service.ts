@@ -11,7 +11,7 @@ import { CourseListItem } from '../models/course-list-item.model';
 export class CoursesService {
   public courseItems: Array<CourseListItem>
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private http: HttpClient) {
     this.courseItems = [
       {
         id: 1,
@@ -44,7 +44,7 @@ export class CoursesService {
   }
 
   getCourseList(): Observable<Object> {
-    return this.httpClient.get(`${environment.apiBaseUrl}courses`)
+    return this.http.get(`${environment.apiBaseUrl}courses`)
   }
 
   createCourseItem(newCourse: CourseListItem): object {
