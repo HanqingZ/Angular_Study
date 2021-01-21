@@ -1,10 +1,10 @@
 import { AuthorModel } from './author.model';
 
 export interface CourseListItem {
-  id: Number;
+  id: number;
   name: string;
   date: string;
-  length: Number;
+  length: number;
   description: string;
   authors: AuthorModel;
   isTopRated: boolean;
