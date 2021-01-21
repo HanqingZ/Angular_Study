@@ -15,14 +15,18 @@ import { Md5 } from 'ts-md5/dist/md5';
 >>>>>>> Add authentication logic
 =======
 import { HttpClient } from '@angular/common/http';
+
 import { environment } from '../../environments/environment';
 import { UserModule } from '../models/user.model';
 <<<<<<< master
 >>>>>>> Add http request with course GET api
 =======
 import { TokenModel } from '../models/token.model';
+<<<<<<< master
 import { Observable } from 'rxjs';
 >>>>>>> Add login method
+=======
+>>>>>>> Modify Login logic
 
 @Injectable({
   providedIn: 'root'
@@ -91,7 +95,7 @@ export class AuthServiceService {
 export class AuthService {
 >>>>>>> Add auth guard for add course and edit course
   existUser: UserModule[];
-  currentUser: UserModule = null;
+  isLogin = null;
 
   constructor(private http: HttpClient) {
     // this.existUser = [
@@ -108,30 +112,35 @@ export class AuthService {
     // ]
   }
 
-  login(userInfo): Observable<Object> {
+  login(userInfo): string {
     if (userInfo?.email && userInfo?.password) {
-      const result = this.http.post(
+      this.http.post(
         `${environment.apiBaseUrl}auth/login`,
         {login: userInfo.email, password: userInfo.password}
-      )
-      if(result) {
-        return result
-      }
-      // }
+      ).subscribe((data: TokenModel) => {
+        console.log(data);
+        if(data?.token) {
+          localStorage.setItem("token", data.token)
+          this.getUserInfo(data.token)
+          return data.token;
+        }
+      })
     }
     return null;
   }
 
   logout() {
-    this.currentUser = null;
+    this.isLogin = false;
+    localStorage.removeItem("token")
+    localStorage.removeItem("username")
     console.log(`logged out`);
   }
 
-  isAuthenticated(): Boolean {
-    if(this.currentUser === null) { return false; }
-    return true;
+  isAuthenticated() {
+    return localStorage.getItem("username");
   }
 
+<<<<<<< master
 <<<<<<< master
 <<<<<<< master
   getUserInfo(): UserModule {
@@ -147,5 +156,16 @@ export class AuthService {
       { token }
     )
 >>>>>>> Add login method
+=======
+  getUserInfo(token: string): void {
+    this.http.post(
+      `${environment.apiBaseUrl}auth/userinfo`,
+      { token }
+    ).subscribe((data: UserModule) => {
+      if(data?.name?.first) {
+        localStorage.setItem("username", data.name.first)
+      }
+    })
+>>>>>>> Modify Login logic
   }
 }

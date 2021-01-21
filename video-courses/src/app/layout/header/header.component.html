@@ -4,6 +4,7 @@
 <<<<<<< master
 <<<<<<< master
 <<<<<<< master
+<<<<<<< master
     <div class="login-logo" *ngIf="!currentUser; then toLogin else toLogout"></div>
     <ng-template #toLogin>
 =======
@@ -11,6 +12,9 @@
 >>>>>>> Add auth guard for several pages
 =======
     <div class="login-logo" *ngIf="!user; then toLogin else toLogout"></div>
+=======
+    <div class="login-logo" *ngIf="!currentUser; then toLogin else toLogout"></div>
+>>>>>>> Modify Login logic
     <ng-template #toLogin>
 >>>>>>> Add auth guard for add course and edit course
       <button routerLink="/login">
@@ -48,9 +52,9 @@
     </ng-template>
     <ng-template #toLogout>
       <img class="icon userIcon" src="../../../assets/image/person-icon.png" alt="userIcon">
-      {{user.firstName}}
+      {{currentUser}}
     </ng-template>
-    <button (click)="logout()" *ngIf="!user">
+    <button (click)="logout()" *ngIf="currentUser">
       <img class="icon userIcon" src="../../../assets/image/logout-icon.png" alt="userIcon">
       Log out
     </button>

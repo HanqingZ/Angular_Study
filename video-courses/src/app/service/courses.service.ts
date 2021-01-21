@@ -54,6 +54,7 @@ export class CoursesService {
     //     isTopRated: false
     //   }
     // ]
+<<<<<<< master
   }
 
   getCourseList(): Observable<Object> {
@@ -125,6 +126,8 @@ export class CoursesService {
         isTopRated: false
       }
     ]
+=======
+>>>>>>> Modify Login logic
   }
 
   getCourseList(): Observable<Object> {
@@ -135,10 +138,12 @@ export class CoursesService {
     return this.http.get(`${environment.apiBaseUrl}courses?start=0&count=${startPoint+3}`)
   }
 
-  getItemById(id: number): CourseListItem[] {
-    console.log(this.courseItems.filter(ele => ele.id === id));
+  getItemById(id: number): Observable<Object> {
+    return this.http.get(`${environment.apiBaseUrl}courses?id=${id}`);
+  }
 
-    return this.courseItems.filter(ele => ele.id === id);
+  getItemByName(name: string): Observable<Object> {
+    return this.http.get(`${environment.apiBaseUrl}courses?name=${name}`);
   }
 
   createCourseItem(newCourse: CourseListItem): object {
@@ -155,9 +160,14 @@ export class CoursesService {
     return { code: 0 }
   }
 
+<<<<<<< master
   deleteItemById(id: Number): CourseListItem[] {
     this.courseItems = this.courseItems.filter(ele => ele.id !== id);
     return this.courseItems;
 >>>>>>> Add service for courses
+=======
+  deleteItemById(id: number): Observable<Object> {
+    return this.http.delete(`${environment.apiBaseUrl}courses/${id}`);
+>>>>>>> Modify Login logic
   }
 }

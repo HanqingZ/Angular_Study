@@ -1,4 +1,5 @@
 <<<<<<< master
+<<<<<<< master
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../service/auth-service.service';
@@ -9,6 +10,9 @@ import { Component, OnInit } from '@angular/core';
 >>>>>>> Add Login page
 =======
 =======
+=======
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+>>>>>>> Modify Login logic
 import { Router } from '@angular/router';
 <<<<<<< master
 >>>>>>> Complete Debug page and modify router
@@ -19,12 +23,15 @@ import { AuthServiceService } from '../../../service/auth-service.service';
 =======
 import { AuthService } from '../../../service/auth-service.service';
 <<<<<<< master
+<<<<<<< master
 >>>>>>> Add auth guard for add course and edit course
 import { Md5 } from 'ts-md5/dist/md5';
 >>>>>>> Modify login logic
 =======
 import { TokenModel } from '../../../models/token.model';
 >>>>>>> Add login method
+=======
+>>>>>>> Modify Login logic
 
 @Component({
   selector: 'app-login',
@@ -39,6 +46,7 @@ export class LoginComponent implements OnInit {
   loginFailed: Boolean = false;
 
   constructor(
+<<<<<<< master
 <<<<<<< master
     private changeDetectorRef: ChangeDetectorRef,
     private router: Router,
@@ -77,13 +85,15 @@ export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthServiceService) { }
 =======
+=======
+    private changeDetectorRef: ChangeDetectorRef,
+>>>>>>> Modify Login logic
     private router: Router,
     private authService: AuthService
   ) { }
 >>>>>>> Complete Debug page and modify router
 
   ngOnInit(): void {
-
   }
 
 <<<<<<< master
@@ -95,17 +105,16 @@ export class LoginComponent implements OnInit {
       password: this.password
     }
 
-    let result;
-    this.authService.login(userInfo).subscribe((data: TokenModel) => {
-      console.log(data);
-      result = data
-      if(result?.token) {
-        this.router.navigate(['/courses'])
-      } else {
-        console.log("failed");
-      }
-    });
+    const token = this.authService.login(userInfo);
+    console.log(token);
 
+    if(localStorage.getItem) {
+      this.loginFailed = false;
+      this.changeDetectorRef.detectChanges()
+      this.router.navigate(['/courses'])
+    } else {
+      this.loginFailed = true;
+    }
   }
 >>>>>>> Modify login logic
 }

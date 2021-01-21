@@ -99,10 +99,16 @@ export class CourseListComponent implements OnInit {
   handleClickMore($event): void {
     this.coursesService.getMoreCourse(this.courseItems.length)
       .subscribe((data: CourseListItem[]) => {
-        console.log(data);
-
         this.courseItems = data;
         this.changeDetectorRef.detectChanges()
+      })
+  }
+
+  search(input): void {
+    this.coursesService.getItemByName(input)
+      .subscribe((data: CourseListItem[]) => {
+        this.courseItems = data;
+        this.changeDetectorRef.detectChanges();
       })
   }
 
@@ -131,7 +137,15 @@ export class CourseListComponent implements OnInit {
     this.changeDetectorRef.markForCheck();
 >>>>>>> Add http request with course GET api
     this.deletePopup = false;
+<<<<<<< master
     this.courseItems = this.coursesService.deleteItemById(this.currentItem.id);
 >>>>>>> Add Delete popup
+=======
+    this.coursesService.deleteItemById(this.currentItem.id)
+    this.coursesService.getMoreCourse(0).subscribe((data: CourseListItem[]) => {
+      this.courseItems = data;
+      this.changeDetectorRef.detectChanges()
+    })
+>>>>>>> Modify Login logic
   }
 }

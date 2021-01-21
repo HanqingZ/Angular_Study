@@ -10,14 +10,18 @@ import { UserModule } from './models/user.model';
 export class AppComponent {
   title = 'video-courses';
 <<<<<<< master
+<<<<<<< master
 =======
   user: UserModule;
 >>>>>>> Add auth guard for add course and edit course
+=======
+>>>>>>> Modify Login logic
 
   constructor(private authService: AuthService) {
   }
 
   ngOnChange(): void {
+<<<<<<< master
 <<<<<<< master
 <<<<<<< master
 =======
@@ -32,6 +36,8 @@ export class AppComponent {
     //   this.user = result;
     // }
 >>>>>>> Implement load more function
+=======
+>>>>>>> Modify Login logic
   }
 
 }
