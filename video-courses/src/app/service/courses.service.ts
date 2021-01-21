@@ -131,15 +131,19 @@ export class CoursesService {
     return this.http.get(`${environment.apiBaseUrl}courses`)
   }
 
-  createCourseItem(newCourse: CourseListItem): object {
-    this.courseItems.push(newCourse);
-    return { code: 0 }
+  getMoreCourse(startPoint: number): Observable<Object> {
+    return this.http.get(`${environment.apiBaseUrl}courses?start=0&count=${startPoint+3}`)
   }
 
-  getItemById(id: Number): CourseListItem[] {
+  getItemById(id: number): CourseListItem[] {
     console.log(this.courseItems.filter(ele => ele.id === id));
 
     return this.courseItems.filter(ele => ele.id === id);
+  }
+
+  createCourseItem(newCourse: CourseListItem): object {
+    this.courseItems.push(newCourse);
+    return { code: 0 }
   }
 
   updateItem(courseItem: CourseListItem): object {

@@ -19,12 +19,19 @@ export class AppComponent {
 
   ngOnChange(): void {
 <<<<<<< master
+<<<<<<< master
 =======
     const result = this.authService.getUserInfo()
     if(result) {
       this.user = result;
     }
 >>>>>>> Add auth guard for add course and edit course
+=======
+    // const result = this.authService.getUserInfo()
+    // if(result) {
+    //   this.user = result;
+    // }
+>>>>>>> Implement load more function
   }
 
 }

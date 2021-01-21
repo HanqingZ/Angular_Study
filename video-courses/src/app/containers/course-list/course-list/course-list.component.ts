@@ -90,10 +90,20 @@ export class CourseListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.coursesService.getCourseList().subscribe((data: CourseListItem[]) => {
+    this.coursesService.getMoreCourse(0).subscribe((data: CourseListItem[]) => {
       this.courseItems = data;
       this.changeDetectorRef.detectChanges()
     });
+  }
+
+  handleClickMore($event): void {
+    this.coursesService.getMoreCourse(this.courseItems.length)
+      .subscribe((data: CourseListItem[]) => {
+        console.log(data);
+
+        this.courseItems = data;
+        this.changeDetectorRef.detectChanges()
+      })
   }
 
   cancelPopup(): void {

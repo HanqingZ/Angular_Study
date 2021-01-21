@@ -21,6 +21,7 @@ import { CoursesService } from '../../../service/courses.service'
 export class NewCourseComponent implements OnInit {
 <<<<<<< master
 <<<<<<< master
+<<<<<<< master
   id: number;
   isAddMode: boolean;
   pageTitle: string = "Courses";
@@ -104,6 +105,9 @@ export class NewCourseComponent implements OnInit {
   authors: String;
 =======
   id: Number;
+=======
+  id: number;
+>>>>>>> Implement load more function
   isAddMode: boolean;
 <<<<<<< master
 >>>>>>> Add routing for course list pages and complete relevant methods

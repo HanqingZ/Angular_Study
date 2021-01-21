@@ -2,6 +2,7 @@ import { AuthorModel } from './author.model';
 
 export interface CourseListItem {
 <<<<<<< master
+<<<<<<< master
   id: number;
   name: string;
   date: string;
@@ -18,6 +19,12 @@ export interface CourseListItem {
   date: string;
   length: Number;
 >>>>>>> Add http request with course GET api
+=======
+  id: number;
+  name: string;
+  date: string;
+  length: number;
+>>>>>>> Implement load more function
   description: string;
   authors: AuthorModel;
   isTopRated: boolean;

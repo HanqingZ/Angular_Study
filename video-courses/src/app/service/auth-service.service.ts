@@ -133,11 +133,15 @@ export class AuthService {
   }
 
 <<<<<<< master
+<<<<<<< master
   getUserInfo(): UserModule {
     return this.currentUser;
 >>>>>>> Add Login page
 =======
   getUserInfo(token): void {
+=======
+  getUserInfo(token: TokenModel): void {
+>>>>>>> Implement load more function
     const result = this.http.post(
       `${environment.apiBaseUrl}auth/userinfo`,
       { token }
