@@ -1,7 +1,7 @@
 <nav class="navbar bg-dark">
-  <span class="navbar-brand mb-0 h1">VIDEO COURSE</span>
+  <span class="navbar-brand mb-0 h1" (click)="navigateTo()">VIDEO COURSE</span>
   <span class="navbar-brand userinfo">
-    <div class="login-logo" *ngIf="!user; then toLogin else toLogout"></div>
+    <div class="login-logo" *ngIf="!currentUser; then toLogin else toLogout"></div>
     <ng-template #toLogin>
       <button routerLink="/login">
         <img class="icon userIcon" src="../../../assets/image/person-icon.png" alt="userIcon">
@@ -10,9 +10,9 @@
     </ng-template>
     <ng-template #toLogout>
       <img class="icon userIcon" src="../../../assets/image/person-icon.png" alt="userIcon">
-      {{user.firstName}}
+      {{currentUser}}
     </ng-template>
-    <button (click)="logout()" *ngIf="!user">
+    <button (click)="logout()" *ngIf="currentUser">
       <img class="icon userIcon" src="../../../assets/image/logout-icon.png" alt="userIcon">
       Log out
     </button>

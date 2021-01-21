@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../service/auth-service.service';
-import { TokenModel } from '../../../models/token.model';
 
 @Component({
   selector: 'app-login',
@@ -14,12 +13,12 @@ export class LoginComponent implements OnInit {
   loginFailed: Boolean = false;
 
   constructor(
+    private changeDetectorRef: ChangeDetectorRef,
     private router: Router,
     private authService: AuthService
   ) { }
 
   ngOnInit(): void {
-
   }
 
   requestLogin () {
@@ -28,16 +27,15 @@ export class LoginComponent implements OnInit {
       password: this.password
     }
 
-    let result;
-    this.authService.login(userInfo).subscribe((data: TokenModel) => {
-      console.log(data);
-      result = data
-      if(result?.token) {
-        this.router.navigate(['/courses'])
-      } else {
-        console.log("failed");
-      }
-    });
+    const token = this.authService.login(userInfo);
+    console.log(token);
 
+    if(localStorage.getItem) {
+      this.loginFailed = false;
+      this.changeDetectorRef.detectChanges()
+      this.router.navigate(['/courses'])
+    } else {
+      this.loginFailed = true;
+    }
   }
 }

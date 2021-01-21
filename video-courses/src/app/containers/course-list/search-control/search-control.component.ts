@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search-control',
@@ -6,8 +6,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./search-control.component.scss']
 })
 export class SearchControlComponent implements OnInit {
-  // @Input() searchInput: string;
-  searchInput: string;
   input: string;
 
   constructor() { }
@@ -17,9 +15,9 @@ export class SearchControlComponent implements OnInit {
 
   enterValue(value: string): void {
     console.log(value);
-    this.searchInput = value;
+    this.searchItem.emit(value);
   }
 
-  // @Output() searchItem = new EventEmitter<string>();
+  @Output() searchItem = new EventEmitter<string>();
 
 }
