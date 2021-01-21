@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../service/auth-service.service'
 
@@ -8,19 +8,26 @@ import { AuthService } from '../../service/auth-service.service'
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Input() user;
-  currentUser: string;
+  public currentUser;
 
   constructor(
+    private changeDetectorRef: ChangeDetectorRef,
     private router: Router,
     private authService: AuthService
   ) { }
 
   ngOnInit(): void {
+    this.currentUser = this.authService.isAuthenticated();
   }
 
   logout() {
     this.authService.logout()
+    this.currentUser = false;
     this.router.navigate(['/login']);
+    this.changeDetectorRef.detectChanges()
+  }
+
+  navigateTo() {
+    this.router.navigate(['/courses']);
   }
 }

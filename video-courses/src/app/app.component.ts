@@ -9,16 +9,11 @@ import { UserModule } from './models/user.model';
 })
 export class AppComponent {
   title = 'video-courses';
-  user: UserModule;
 
   constructor(private authService: AuthService) {
   }
 
   ngOnChange(): void {
-    // const result = this.authService.getUserInfo()
-    // if(result) {
-    //   this.user = result;
-    // }
   }
 
 }
