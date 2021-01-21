@@ -15,10 +15,10 @@ export class AppComponent {
   }
 
   ngOnChange(): void {
-    const result = this.authService.getUserInfo()
-    if(result) {
-      this.user = result;
-    }
+    // const result = this.authService.getUserInfo()
+    // if(result) {
+    //   this.user = result;
+    // }
   }
 
 }

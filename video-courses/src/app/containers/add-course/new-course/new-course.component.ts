@@ -9,7 +9,7 @@ import { CoursesService } from '../../../service/courses.service'
   styleUrls: ['./new-course.component.scss']
 })
 export class NewCourseComponent implements OnInit {
-  id: Number;
+  id: number;
   isAddMode: boolean;
   pageTitle: string = "Courses";
 

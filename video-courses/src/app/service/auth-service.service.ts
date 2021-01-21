@@ -51,7 +51,7 @@ export class AuthService {
     return true;
   }
 
-  getUserInfo(token): void {
+  getUserInfo(token: TokenModel): void {
     const result = this.http.post(
       `${environment.apiBaseUrl}auth/userinfo`,
       { token }
