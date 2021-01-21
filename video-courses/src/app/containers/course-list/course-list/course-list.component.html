@@ -1,9 +1,6 @@
 <div class="main">
   <app-breadcrumbs [title]="pageTitle"></app-breadcrumbs>
-  <app-search-control #searchField></app-search-control>
->>>>>>> Add Delete popup
-=======
->>>>>>> Modify Login logic
+  <app-search-control #searchField (searchItem)="search($event)"></app-search-control>
   <app-add-course></app-add-course>
 
   <div class="emptyCourse" *ngIf="!courseItems else someData">
