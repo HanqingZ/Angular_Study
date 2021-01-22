@@ -22,7 +22,7 @@ export class CourseListComponent implements OnInit {
 
   ngOnInit(): void {
     this.coursesService.getMoreCourse(0).subscribe((data: CourseListItem[]) => {
-      this.courseItems = data;
+      this.courseItems = data.length === 0 ? undefined : data;
       this.changeDetectorRef.detectChanges()
     });
   }
@@ -56,10 +56,8 @@ export class CourseListComponent implements OnInit {
   removeItem(): void {
     this.changeDetectorRef.markForCheck();
     this.deletePopup = false;
-    this.coursesService.deleteItemById(this.currentItem.id)
-    this.coursesService.getMoreCourse(0).subscribe((data: CourseListItem[]) => {
-      this.courseItems = data;
-      this.changeDetectorRef.detectChanges()
-    })
+    const result = this.coursesService.deleteItemById(this.currentItem.id)
+    this.courseItems = result.length === 0 ? undefined : result
+    this.changeDetectorRef.detectChanges()
   }
 }
