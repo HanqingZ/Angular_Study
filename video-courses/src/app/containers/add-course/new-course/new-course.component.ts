@@ -121,7 +121,10 @@ export class NewCourseComponent implements OnInit {
     date: '',
     length: null,
     description: '',
-    authors: null,
+    authors: {
+      id: null,
+      name: null
+    },
     isTopRated: false
   };
 
