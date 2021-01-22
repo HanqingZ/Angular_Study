@@ -60,16 +60,12 @@ export class CoursesService {
   }
 
   createCourseItem(newCourse: CourseListItem): object {
-    this.courseItems.push(newCourse);
+    this.http.post(`${environment.apiBaseUrl}courses`, newCourse);
     return { code: 0 }
   }
 
   updateItem(courseItem: CourseListItem): object {
-    this.courseItems.map(ele => {
-      if(ele.id === courseItem.id) {
-        ele = courseItem
-      }
-    })
+    this.http.put(`${environment.apiBaseUrl}courses/${courseItem.id}`, courseItem)
     return { code: 0 }
   }
 
