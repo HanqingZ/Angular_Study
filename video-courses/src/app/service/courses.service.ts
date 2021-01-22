@@ -89,6 +89,7 @@ export class CoursesService {
         return data;
       })
     });
+<<<<<<< master
 =======
   constructor() {
 =======
@@ -165,5 +166,7 @@ export class CoursesService {
   deleteItemById(id: number): Observable<Object> {
     return this.http.delete(`${environment.apiBaseUrl}courses/${id}`);
 >>>>>>> Modify Login logic
+=======
+>>>>>>> Modify delete course issue
   }
 }

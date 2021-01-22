@@ -91,7 +91,7 @@ export class CourseListComponent implements OnInit {
 
   ngOnInit(): void {
     this.coursesService.getMoreCourse(0).subscribe((data: CourseListItem[]) => {
-      this.courseItems = data;
+      this.courseItems = data.length === 0 ? undefined : data;
       this.changeDetectorRef.detectChanges()
     });
   }
@@ -138,6 +138,7 @@ export class CourseListComponent implements OnInit {
 >>>>>>> Add http request with course GET api
     this.deletePopup = false;
 <<<<<<< master
+<<<<<<< master
     this.courseItems = this.coursesService.deleteItemById(this.currentItem.id);
 >>>>>>> Add Delete popup
 =======
@@ -147,5 +148,10 @@ export class CourseListComponent implements OnInit {
       this.changeDetectorRef.detectChanges()
     })
 >>>>>>> Modify Login logic
+=======
+    const result = this.coursesService.deleteItemById(this.currentItem.id)
+    this.courseItems = result.length === 0 ? undefined : result
+    this.changeDetectorRef.detectChanges()
+>>>>>>> Modify delete course issue
   }
 }
