@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
   loginFailed: Boolean = false;
+  loading: boolean = true;
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loading = false;
   }
 
   requestLogin () {
@@ -26,6 +28,8 @@ export class LoginComponent implements OnInit {
       email: this.email,
       password: this.password
     }
+
+    this.loading = true;
 
     const token = this.authService.login(userInfo);
     console.log(token);
@@ -37,5 +41,7 @@ export class LoginComponent implements OnInit {
     } else {
       this.loginFailed = true;
     }
+
+    this.loading = false;
   }
 }

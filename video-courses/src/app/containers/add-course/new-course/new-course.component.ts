@@ -12,6 +12,7 @@ export class NewCourseComponent implements OnInit {
   id: number;
   isAddMode: boolean;
   pageTitle: string = "Courses";
+  loading: boolean = true;
 
   courseSelected: CourseListItem = {
     id: null,
@@ -48,6 +49,8 @@ export class NewCourseComponent implements OnInit {
     } else {
       this.pageTitle = `Courses / New Course`
     }
+
+    this.loading = false;
   }
 
   submitCourse() {
@@ -64,6 +67,7 @@ export class NewCourseComponent implements OnInit {
       return console.log("Please Complete empty field")
     }
 
+    this.loading = true;
     if(!this.isAddMode){
       result = this.coursesService.updateItem(this.courseSelected)
       if(result.code === 0) {
@@ -82,5 +86,6 @@ export class NewCourseComponent implements OnInit {
         console.log("failed to add this course");
       }
     }
+    this.loading = false;
   }
 }

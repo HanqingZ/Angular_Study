@@ -13,9 +13,6 @@ import { AddCourseComponent } from './add-course/add-course.component';
 import { LoadMoreComponent } from './load-more/load-more.component';
 import { SearchControlComponent } from './search-control/search-control.component';
 import { PopupComponent } from './popup/popup.component';
-import { FormsModule } from '@angular/forms';
-import { ToolsModule } from '../../tools/tools.module';
-import { LayoutModule } from '../../layout/layout.module'
 
 const routes: Routes = [
   {
@@ -38,7 +35,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     ToolsModule,
-    LayoutModule
+    LayoutModule,
+    LoadingModule
   ],
   exports: [
     RouterModule,

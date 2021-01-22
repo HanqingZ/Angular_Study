@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+
 import { LoginComponent } from './login/login.component';
+import { LoadingModule } from '../loading/loading.module'
 
 const routes: Routes = [
   {
@@ -18,7 +20,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    LoadingModule
   ],
   exports: [
     RouterModule,
