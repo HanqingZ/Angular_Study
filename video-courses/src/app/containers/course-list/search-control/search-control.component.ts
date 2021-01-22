@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-search-control',
@@ -6,18 +7,16 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./search-control.component.scss']
 })
 export class SearchControlComponent implements OnInit {
-  input: string;
+  searchValue$ = new Subject<KeyboardEvent>();
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.searchValue$.next());
+    this.searchValue$.pipe().subscribe((event)=>{
+      this.searchItem.emit((<HTMLInputElement>event.target).value);
+    })
   }
 
-  enterValue(value: string): void {
-    console.log(value);
-    this.searchItem.emit(value);
-  }
-
-  @Output() searchItem = new EventEmitter<string>();
-
+  @Output() searchItem = new EventEmitter<any>();
 }
