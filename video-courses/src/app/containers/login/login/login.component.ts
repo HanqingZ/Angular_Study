@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
   loginFailed: Boolean = false;
+  loading: boolean = true;
 
   constructor(
 <<<<<<< master
@@ -94,6 +95,7 @@ export class LoginComponent implements OnInit {
 >>>>>>> Complete Debug page and modify router
 
   ngOnInit(): void {
+    this.loading = false;
   }
 
 <<<<<<< master
@@ -105,6 +107,8 @@ export class LoginComponent implements OnInit {
       password: this.password
     }
 
+    this.loading = true;
+
     const token = this.authService.login(userInfo);
     console.log(token);
 
@@ -115,6 +119,8 @@ export class LoginComponent implements OnInit {
     } else {
       this.loginFailed = true;
     }
+
+    this.loading = false;
   }
 >>>>>>> Modify login logic
 }

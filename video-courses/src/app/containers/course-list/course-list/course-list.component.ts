@@ -82,7 +82,11 @@ export class CourseListComponent implements OnInit {
 >>>>>>> Modify breadcrumbs value
 =======
   pageTitle: string = 'Courses';
+<<<<<<< master
 >>>>>>> Add http request with course GET api
+=======
+  loading: boolean = true;
+>>>>>>> Add loading for all services all
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
@@ -94,22 +98,27 @@ export class CourseListComponent implements OnInit {
       this.courseItems = data.length === 0 ? undefined : data;
       this.changeDetectorRef.detectChanges()
     });
+    this.loading = false;
   }
 
   handleClickMore($event): void {
+    this.loading = true;
     this.coursesService.getMoreCourse(this.courseItems.length)
       .subscribe((data: CourseListItem[]) => {
         this.courseItems = data;
         this.changeDetectorRef.detectChanges()
       })
+    this.loading = false;
   }
 
   search(input): void {
+    this.loading = true;
     this.coursesService.getItemByName(input)
       .subscribe((data: CourseListItem[]) => {
         this.courseItems = data;
         this.changeDetectorRef.detectChanges();
       })
+    this.loading = false;
   }
 
   cancelPopup(): void {
@@ -124,6 +133,7 @@ export class CourseListComponent implements OnInit {
 
   removeItem(): void {
 <<<<<<< master
+<<<<<<< master
     console.log("parent component - removeItem", this.courseItems);
 <<<<<<< master
 <<<<<<< master
@@ -134,6 +144,9 @@ export class CourseListComponent implements OnInit {
     this.changeDetectorRef.markForCheck()
 >>>>>>> Modify with onPush
 =======
+=======
+    this.loading = true;
+>>>>>>> Add loading for all services all
     this.changeDetectorRef.markForCheck();
 >>>>>>> Add http request with course GET api
     this.deletePopup = false;
@@ -151,6 +164,7 @@ export class CourseListComponent implements OnInit {
 =======
     const result = this.coursesService.deleteItemById(this.currentItem.id)
     this.courseItems = result.length === 0 ? undefined : result
+    this.loading = false;
     this.changeDetectorRef.detectChanges()
 >>>>>>> Modify delete course issue
   }

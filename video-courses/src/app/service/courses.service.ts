@@ -25,6 +25,7 @@ export class CoursesService {
 <<<<<<< master
 <<<<<<< master
   constructor(private http: HttpClient) {
+<<<<<<< master
     // this.courseItems = [
     //   {
     //     id: 1,
@@ -55,6 +56,8 @@ export class CoursesService {
     //   }
     // ]
 <<<<<<< master
+=======
+>>>>>>> Add loading for all services all
   }
 
   getCourseList(): Observable<Object> {

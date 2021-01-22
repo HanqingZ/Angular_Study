@@ -9,8 +9,14 @@ import { CourseDateHoverDirective } from './directives/course-date-hover.directi
 <<<<<<< master
 
 @NgModule({
-  declarations: [DurationPipe, OrderByPipe, FilterPipe, CourseDateHoverDirective],
+  declarations: [
+    DurationPipe,
+    OrderByPipe,
+    FilterPipe,
+    CourseDateHoverDirective
+  ],
   imports: [CommonModule],
+<<<<<<< master
   exports: [DurationPipe, OrderByPipe,FilterPipe, CourseDateHoverDirective]
 =======
 import { AuthGuard } from './auth.guard';
@@ -26,6 +32,14 @@ import { AuthGuard } from './auth.guard';
 =======
   exports: [DurationPipe, OrderByPipe,FilterPipe, CourseDateHoverDirective]
 >>>>>>> Add auth guard for add course and edit course
+=======
+  exports: [
+    DurationPipe,
+    OrderByPipe,
+    FilterPipe,
+    CourseDateHoverDirective
+  ]
+>>>>>>> Add loading for all services all
 })
 
 export class ToolsModule { }

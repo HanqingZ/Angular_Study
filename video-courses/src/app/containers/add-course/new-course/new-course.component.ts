@@ -113,7 +113,11 @@ export class NewCourseComponent implements OnInit {
 >>>>>>> Add routing for course list pages and complete relevant methods
 =======
   pageTitle: string = "Courses";
+<<<<<<< master
 >>>>>>> Modify breadcrumbs value
+=======
+  loading: boolean = true;
+>>>>>>> Add loading for all services all
 
   courseSelected: CourseListItem = {
     id: null,
@@ -150,6 +154,8 @@ export class NewCourseComponent implements OnInit {
     } else {
       this.pageTitle = `Courses / New Course`
     }
+
+    this.loading = false;
   }
 
 <<<<<<< master
@@ -169,6 +175,7 @@ export class NewCourseComponent implements OnInit {
       return console.log("Please Complete empty field")
     }
 
+    this.loading = true;
     if(!this.isAddMode){
       result = this.coursesService.updateItem(this.courseSelected)
       if(result.code === 0) {
@@ -187,6 +194,7 @@ export class NewCourseComponent implements OnInit {
         console.log("failed to add this course");
       }
     }
+    this.loading = false;
   }
 >>>>>>> Add routing for course list pages and complete relevant methods
 }
