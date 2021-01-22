@@ -69,7 +69,11 @@ export class CoursesService {
     return { code: 0 }
   }
 
-  deleteItemById(id: number): Observable<Object> {
-    return this.http.delete(`${environment.apiBaseUrl}courses/${id}`);
+  deleteItemById(id: number): any {
+    this.http.delete(`${environment.apiBaseUrl}courses/${id}`).subscribe(data => {
+      this.getMoreCourse(0).subscribe(data => {
+        return data;
+      })
+    });
   }
 }
