@@ -24,4 +24,6 @@
     (submitDelete)="removeItem($event)"
     [itemTitle]="currentItem.title"
   ></app-popup>
+
+ <app-loading *ngIf="loading"></app-loading>
 </div>

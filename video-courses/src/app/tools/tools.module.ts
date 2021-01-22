@@ -7,9 +7,19 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { CourseDateHoverDirective } from './directives/course-date-hover.directive';
 
 @NgModule({
-  declarations: [DurationPipe, OrderByPipe, FilterPipe, CourseDateHoverDirective],
+  declarations: [
+    DurationPipe,
+    OrderByPipe,
+    FilterPipe,
+    CourseDateHoverDirective
+  ],
   imports: [CommonModule],
-  exports: [DurationPipe, OrderByPipe,FilterPipe, CourseDateHoverDirective]
+  exports: [
+    DurationPipe,
+    OrderByPipe,
+    FilterPipe,
+    CourseDateHoverDirective
+  ]
 })
 
 export class ToolsModule { }
