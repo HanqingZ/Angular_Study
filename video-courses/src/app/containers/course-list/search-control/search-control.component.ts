@@ -12,9 +12,11 @@ export class SearchControlComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.searchValue$.next());
     this.searchValue$.pipe().subscribe((event)=>{
-      this.searchItem.emit((<HTMLInputElement>event.target).value);
+      let searchValue = (<HTMLInputElement>event.target).value;
+      if(searchValue.length >= 3){
+        this.searchItem.emit(searchValue);
+      }
     })
   }
 
