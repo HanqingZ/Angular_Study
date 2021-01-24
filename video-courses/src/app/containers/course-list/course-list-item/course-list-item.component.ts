@@ -18,7 +18,7 @@ export class CourseListItemComponent implements OnInit {
 
   }
 
-  editRequest(itemId: Number): void {
+  editRequest(itemId: number): void {
     if(itemId){
       this.router.navigate([`/courses/${itemId}`])
     }
