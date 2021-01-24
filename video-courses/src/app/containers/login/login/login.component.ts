@@ -1,8 +1,10 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
 import { Login } from 'src/app/store/actions/auth.actions';
-import { AppState } from 'src/app/store/state/app-state';
+import * as fromAuth from '../../../store/reducers/auth.reducer';
 import { AuthService } from '../../../service/auth-service.service';
 
 @Component({
@@ -14,17 +16,17 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
   loginFailed: Boolean = false;
-  loading: boolean = true;
+  loading: Observable<boolean>;
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
     private router: Router,
     private authService: AuthService,
-    private store: Store<AppState>
+    private store: Store<fromAuth.AppState>
   ) { }
 
   ngOnInit(): void {
-    this.loading = false;
+    this.loading = this.store.pipe(select(fromAuth.LoadingStatus));
   }
 
   requestLogin () {
@@ -32,8 +34,6 @@ export class LoginComponent implements OnInit {
       email: this.email,
       password: this.password
     }
-
-    this.loading = true;
 
     this.store.dispatch(new Login(userInfo))
     this.router.navigate(['/courses'])
@@ -48,7 +48,5 @@ export class LoginComponent implements OnInit {
     // } else {
     //   this.loginFailed = true;
     // }
-
-    this.loading = false;
   }
 }

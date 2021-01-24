@@ -5,7 +5,12 @@ import { FormsModule } from '@angular/forms';
 
 import { ToolsModule } from '../../tools/tools.module';
 import { LayoutModule } from '../../layout/layout.module';
-import { LoadingModule } from '../loading/loading.module'
+import { LoadingModule } from '../loading/loading.module';
+
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { CourseReducer } from '../../store/reducers/course.reducer';
+import { CourseEffect } from '../../store/effects/course.effects';
 
 import { CourseListComponent } from './course-list/course-list.component';
 import { CourseListItemComponent } from './course-list-item/course-list-item.component';
@@ -36,7 +41,9 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     ToolsModule,
     LayoutModule,
-    LoadingModule
+    LoadingModule,
+    StoreModule.forFeature('courses', CourseReducer),
+    EffectsModule.forFeature([CourseEffect])
   ],
   exports: [
     RouterModule,

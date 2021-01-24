@@ -1,4 +1,4 @@
-import { ActionReducerMap } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 import * as authActions from '../actions/auth.actions';
 import * as fromRoot from '../state/app-state';
 import { TokenModel } from '../../models/token.model';
@@ -21,7 +21,7 @@ export const initState: authState = {
   error: ''
 }
 
-export function authReducer(
+export function AuthReducer(
   state = initState,
   action: authActions.Actions
 ): authState {
@@ -69,7 +69,26 @@ export function authReducer(
   }
 }
 
-export const LoginStatus = (state: authState) => state.isLoggedIn;
-export const LoadingStatus = (state: authState) => state.isLoading;
-export const errorMessage = (state: authState) => state.error;
-export const currentUser = (state: authState) => state.token;
+const getAuthFeatureState = createFeatureSelector<authState>(
+  "user"
+)
+
+export const LoginStatus = createSelector(
+  getAuthFeatureState,
+  (state: authState) => state.isLoggedIn
+)
+
+export const LoadingStatus = createSelector(
+  getAuthFeatureState,
+  (state: authState) => state.isLoading
+)
+
+export const errorMessage = createSelector(
+  getAuthFeatureState,
+  (state: authState) => state.error
+)
+
+export const currentUser = createSelector(
+  getAuthFeatureState,
+  (state: authState) => state.token
+)
