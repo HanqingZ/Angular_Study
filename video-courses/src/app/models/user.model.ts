@@ -1,6 +1,6 @@
 import { NameModel } from './name.model';
 
-export interface UserModule {
+export interface UserModel {
   id: number;
   token: string,
   name: NameModel;

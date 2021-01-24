@@ -7,6 +7,10 @@ import { LayoutModule } from './layout/layout.module';
 import { ToolsModule } from './tools/tools.module';
 import { HttpClientModule } from '@angular/common/http';
 
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule} from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +20,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
-    ToolsModule
+    ToolsModule,
+    StoreModule.forRoot({ }),
+    StoreDevtoolsModule.instrument(),
+    EffectsModule.forRoot([ ])
   ],
   providers: [],
   bootstrap: [AppComponent]
