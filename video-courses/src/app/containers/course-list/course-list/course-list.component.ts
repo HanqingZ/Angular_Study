@@ -24,7 +24,7 @@ export class CourseListComponent implements OnInit {
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
     private coursesService: CoursesService,
-    private store: Store<any>
+    private store: Store<fromCourse.AppState>
   ) {
   }
 
