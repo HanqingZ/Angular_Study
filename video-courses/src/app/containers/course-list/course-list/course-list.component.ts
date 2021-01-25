@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { CourseRequirement } from 'src/app/store/actions/course.actions';
+import * as CourseActions from 'src/app/store/actions/course.actions';
 import * as fromCourse from 'src/app/store/reducers/course.reducer';
 
 import { CourseListItem } from '../../../models';
@@ -14,24 +14,32 @@ import { CoursesService } from '../../../service/courses.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CourseListComponent implements OnInit {
-  courseItems: Observable<CourseListItem[]>;
+  courseItems: CourseListItem[];
   currentItem: CourseListItem;
   searchKeyword: string;
   deletePopup: Boolean = false;
   pageTitle: string = 'Courses';
-  loading: Observable<boolean>;
+  loading: boolean = false;
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
     private coursesService: CoursesService,
-    private store: Store<fromCourse.AppState>
-  ) {}
+    private store: Store<any>
+  ) {
+  }
 
   ngOnInit(): void {
-    this.courseItems = this.store.pipe(select(fromCourse.CourseListStatus));
-    this.loading = this.store.pipe(select(fromCourse.LoadingStatus));
+    this.store.dispatch(new CourseActions.CourseRequirement(0))
+    this.store.subscribe(state => {
+      console.log('subscribe', state);
+      this.courseItems = state.courses.course;
+      this.loading = state.courses.isLoading;
+      console.log(this.courseItems)
+      this.changeDetectorRef.detectChanges()
+    })
+    // this.loading = this.store.pipe(select(fromCourse.LoadingStatus));
+    // this.courseItems = this.store.pipe(select(fromCourse.CourseListStatus));
 
-    this.store.dispatch(new CourseRequirement(0))
     // this.store.subscribe(state => this.loading = )
     // this.coursesService.getMoreCourse(0).subscribe((data: CourseListItem[]) => {
     //   this.courseItems = data.length === 0 ? undefined : data;
@@ -45,16 +53,15 @@ export class CourseListComponent implements OnInit {
     //     this.courseItems = data;
     //     this.changeDetectorRef.detectChanges()
     //   })
-    this.store.dispatch(new CourseRequirement(6))
+    this.store.dispatch(new CourseActions.CourseRequirement(this.courseItems.length))
   }
 
-  search(input): void {
-    // TODO
-    // this.coursesService.getItemByName(input)
-    //   .subscribe((data: CourseListItem[]) => {
-    //     this.courseItems = data;
-    //     this.changeDetectorRef.detectChanges();
-    //   })
+  search(input: string): void {
+    this.coursesService.getItemByName(input)
+      .subscribe((data: CourseListItem[]) => {
+        this.courseItems = data;
+        this.changeDetectorRef.detectChanges();
+      })
   }
 
   cancelPopup(): void {

@@ -10,7 +10,7 @@ export interface courseState {
 }
 
 export interface AppState extends fromRoot.AppState {
-  course: CourseListItem[];
+  courses: courseState
 }
 
 export const initState: courseState = {
@@ -70,21 +70,21 @@ export function CourseReducer(
   }
 }
 
-const getCourseListFeatureState = createFeatureSelector<courseState>(
-  "Courses"
-)
+// const getCourseListFeatureState = createFeatureSelector<courseState>(
+//   "Courses"
+// )
 
-export const CourseListStatus = createSelector(
-  getCourseListFeatureState,
-  (state: courseState) => state.course
-)
+// export const CourseListStatus = createSelector(
+//   getCourseListFeatureState,
+//   (state: courseState) => state.course
+// )
 
-export const LoadingStatus = createSelector(
-  getCourseListFeatureState,
-  (state: courseState) => state.isLoading
-)
+// export const LoadingStatus = createSelector(
+//   getCourseListFeatureState,
+//   (state: courseState) => state.isLoading
+// )
 
-export const errorMessage = createSelector(
-  getCourseListFeatureState,
-  (state: courseState) => state.error
-)
+// export const errorMessage = createSelector(
+//   getCourseListFeatureState,
+//   (state: courseState) => state.error
+// )
