@@ -11,7 +11,7 @@ export interface authState {
 }
 
 export interface AppState extends fromRoot.AppState {
-  token: TokenModel;
+  userStates: authState;
 }
 
 export const initState: authState = {
