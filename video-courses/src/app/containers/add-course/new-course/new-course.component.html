@@ -2,41 +2,49 @@
   <app-breadcrumbs [title]="pageTitle"></app-breadcrumbs>
   <div class="add-new-course">
     <span>New Course</span>
-    <div class="new-course title">
-      <div class="titre">
-        <p>Title:</p>
-        <p class="required">*required</p>
-      </div>
-      <input type="text" [(ngModel)]="courseSelected.name" placeholder="Text input">
+
+    <div class="formControlError">
+      <p >Email need to be complete</p>
     </div>
-    <div class="new-course description">
-      <div class="titre">
-        <p>Description:</p>
-        <p class="required">*required</p>
-      </div>
-      <textarea [(ngModel)]="courseSelected.description" rows="5" cols="60" name="description" placeholder="Add description"></textarea>
-    </div>
-    <div class="new-course duration">
-      <div class="titre">
-        <p>length:</p>
-        <p class="required">*required</p>
-      </div>
-      <input type="number" min="0" [(ngModel)]="courseSelected.length" placeholder="minutes">
-    </div>
-    <div class="new-course date">
-      <div class="titre">
-        <p>Date:</p>
-        <p class="required">*required</p>
-      </div>
-      <input type="date" [(ngModel)]="courseSelected.date" placeholder="MM/DD/YYYY">
-    </div>
-    <div class="new-course authors">
-      <div class="titre">
-        <p>Authors:</p>
-        <p class="required">*required</p>
-      </div>
-      <input type="text" [(ngModel)]="courseSelected.authors.name" placeholder="Start typing">
-    </div>
+
+    <!-- <form [formGroup]="courseController"> -->
+      <span class="new-course title">
+        <div class="titre">
+          <p>Title:</p>
+          <p class="required">*required</p>
+        </div>
+        <!-- <input type="text" [(ngModel)]="courseSelected.name" placeholder="Text input" formControlName="name" > -->
+        <input type="text" [(ngModel)]="courseSelected.name" placeholder="Text input">
+      </span>
+      <span class="new-course description">
+        <div class="titre">
+          <p>Description:</p>
+          <p class="required">*required</p>
+        </div>
+        <textarea [(ngModel)]="courseSelected.description" rows="5" cols="60" name="description" placeholder="Add description"></textarea>
+      </span>
+      <span class="new-course duration">
+        <div class="titre">
+          <p>length:</p>
+          <p class="required">*required</p>
+        </div>
+        <input type="number" min="0" [(ngModel)]="courseSelected.length" placeholder="minutes">
+      </span>
+      <span class="new-course date">
+        <div class="titre">
+          <p>Date:</p>
+          <p class="required">*required</p>
+        </div>
+        <input type="date" [(ngModel)]="courseSelected.date" placeholder="MM/DD/YYYY">
+      </span>
+      <span class="new-course authors">
+        <div class="titre">
+          <p>Authors:</p>
+          <p class="required">*required</p>
+        </div>
+        <input type="text" [(ngModel)]="courseSelected.authors.name" placeholder="Start typing">
+      </span>
+    <!-- </form> -->
     <div class="btn-group">
       <button class="button cancel" routerLink="/courses">Cancel</button>
       <button class="button submit" (click)="submitCourse()">Save</button>

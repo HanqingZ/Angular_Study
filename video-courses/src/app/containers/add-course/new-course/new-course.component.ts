@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { FormControl, FormGroup } from '@angular/forms';
+
 import { CourseListItem } from 'src/app/models/course-list-item.model';
 import { CoursesService } from '../../../service/courses.service'
 
@@ -13,6 +15,13 @@ export class NewCourseComponent implements OnInit {
   isAddMode: boolean;
   pageTitle: string = "Courses";
   loading: boolean = true;
+  courseController = new FormGroup({
+    name: new FormControl(''),
+    description: new FormControl(''),
+    length: new FormControl(''),
+    date: new FormControl(''),
+    author: new FormControl(''),
+  });
 
   courseSelected: CourseListItem = {
     id: null,

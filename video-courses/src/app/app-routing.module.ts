@@ -19,13 +19,13 @@ const routes: Routes = [
   },
   {
     path: 'courses/new',
-    loadChildren: AddCourseComponent,
-    canActivate: [AuthGuard]
+    loadChildren: AddCourseComponent
+    // canActivate: [AuthGuard]
   },
   {
     path: 'courses/:id',
-    loadChildren: AddCourseComponent,
-    canActivate: [AuthGuard]
+    loadChildren: AddCourseComponent
+    // canActivate: [AuthGuard]
   },
   {
     path: 'login',
