@@ -8,7 +8,10 @@ export enum CourseRequirementActionTypes {
   COURSE_REQUIREMENT_FAILURE = '[Course Page] Get Course Failure',
   SEARCH_COURSE = '[Course Page] Search Course',
   SEARCH_COURSE_SUCCESS = '[Course Page] Search Course Success',
-  SEARCH_COURSE_FAILURE = '[Course Page] Search Course Failure'
+  SEARCH_COURSE_FAILURE = '[Course Page] Search Course Failure',
+  DELETE_COURSE = "[Course Page] Delete Course",
+  DELETE_COURSE_SUCCESS = "[Course Page] Delete Course Success",
+  DELETE_COURSE_FAILURE = "[Course Page] Delete Course Failure"
 }
 
 export class CourseRequirement implements Action {
@@ -41,10 +44,27 @@ export class SearchCourseFailure implements Action {
   constructor(public payload: string) {}
 }
 
+export class DeleteCourse implements Action {
+  readonly type = CourseRequirementActionTypes.DELETE_COURSE;
+  constructor(public payload: number) {}
+}
+
+export class DeleteCourseSuccess implements Action {
+  readonly type = CourseRequirementActionTypes.DELETE_COURSE_SUCCESS;
+}
+
+export class DeleteCourseFailure implements Action {
+  readonly type = CourseRequirementActionTypes.DELETE_COURSE_FAILURE;
+  constructor(public payload: string) {}
+}
+
 export type Actions =
    CourseRequirement
  | CourseRequirementSuccess
  | CourseRequirementFailure
  | SearchCourse
  | SearchCourseSuccess
- | SearchCourseFailure;
+ | SearchCourseFailure
+ | DeleteCourse
+ | DeleteCourseSuccess
+ | DeleteCourseFailure;

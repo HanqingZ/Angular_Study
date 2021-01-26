@@ -65,6 +65,25 @@ export function CourseReducer(
         error: action.payload
       }
     }
+    case CourseActions.CourseRequirementActionTypes.DELETE_COURSE: {
+      return {
+        ...state,
+        isLoading: true
+      };
+    }
+    case CourseActions.CourseRequirementActionTypes.DELETE_COURSE_SUCCESS: {
+      return {
+        ...state,
+        isLoading: false
+      }
+    }
+    case CourseActions.CourseRequirementActionTypes.DELETE_COURSE_FAILURE: {
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload
+      }
+    }
     default:
       return state;
   }

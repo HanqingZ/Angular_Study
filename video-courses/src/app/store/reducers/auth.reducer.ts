@@ -69,26 +69,26 @@ export function AuthReducer(
   }
 }
 
-const getAuthFeatureState = createFeatureSelector<authState>(
-  "user"
-)
+// const getAuthFeatureState = createFeatureSelector<authState>(
+//   "user"
+// )
 
-export const LoginStatus = createSelector(
-  getAuthFeatureState,
-  (state: authState) => state.isLoggedIn
-)
+// export const LoginStatus = createSelector(
+//   getAuthFeatureState,
+//   (state: authState) => state.isLoggedIn
+// )
 
-export const LoadingStatus = createSelector(
-  getAuthFeatureState,
-  (state: authState) => state.isLoading
-)
+// export const LoadingStatus = createSelector(
+//   getAuthFeatureState,
+//   (state: authState) => state.isLoading
+// )
 
-export const errorMessage = createSelector(
-  getAuthFeatureState,
-  (state: authState) => state.error
-)
+// export const errorMessage = createSelector(
+//   getAuthFeatureState,
+//   (state: authState) => state.error
+// )
 
-export const currentUser = createSelector(
-  getAuthFeatureState,
-  (state: authState) => state.token
-)
+// export const currentUser = createSelector(
+//   getAuthFeatureState,
+//   (state: authState) => state.token
+// )

@@ -40,4 +40,17 @@ export class CourseEffect {
       )
     )
   )
+
+  @Effect()
+  deleteCourses$ = this.actions$.pipe(
+    ofType<CourseActions.DeleteCourse>(CourseActions.CourseRequirementActionTypes.DELETE_COURSE),
+    mergeMap((actions: CourseActions.DeleteCourse) =>
+      this.coursesService.deleteItemById(actions.payload).pipe(
+        map(() =>
+          new CourseActions.DeleteCourseSuccess()
+        ),
+        catchError(err => of(new CourseActions.DeleteCourseFailure(err)))
+      )
+    )
+  )
 }

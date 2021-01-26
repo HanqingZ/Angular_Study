@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType} from '@ngrx/effects';
 import { Action } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
-import { map, mergeMap, catchError } from 'rxjs/operators';
+import { map, switchMap, catchError } from 'rxjs/operators';
 
 import { AuthService } from '../../service/auth-service.service';
 import * as AuthActions from '../actions/auth.actions';
@@ -18,7 +18,7 @@ export class AuthEffect {
   @Effect()
   login$: Observable<Action> = this.actions$.pipe(
     ofType<AuthActions.Login>(AuthActions.AuthActionTypes.LOGIN),
-    mergeMap((actions: AuthActions.Login) =>
+    switchMap((actions: AuthActions.Login) =>
       this.authService.login(actions.payload).pipe(
         map((token: TokenModel) =>
           new AuthActions.LoginSuccess(token)

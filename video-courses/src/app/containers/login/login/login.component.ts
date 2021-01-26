@@ -1,11 +1,11 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { Store, select } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
 
-import { Login } from 'src/app/store/actions/auth.actions';
+import * as authActions from 'src/app/store/actions/auth.actions';
 import * as fromAuth from '../../../store/reducers/auth.reducer';
 import { AuthService } from '../../../service/auth-service.service';
+import { TokenModel } from 'src/app/models/token.model';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,8 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
   loginFailed: Boolean = false;
-  loading: Observable<boolean>;
+  loading: boolean = false;
+  token: TokenModel;
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
@@ -26,7 +27,10 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.loading = this.store.pipe(select(fromAuth.LoadingStatus));
+    this.store.subscribe(state => {
+      this.loading = state.userStates.isLoading;
+      this.token = state.userStates.token;
+    });
   }
 
   requestLogin () {
@@ -35,7 +39,8 @@ export class LoginComponent implements OnInit {
       password: this.password
     }
 
-    this.store.dispatch(new Login(userInfo))
+    this.store.dispatch(new authActions.Login(userInfo))
+    this.store.dispatch(new authActions.GetUserInfo(this.token.token))
     this.router.navigate(['/courses'])
 
     // const token = this.authService.login(userInfo);
