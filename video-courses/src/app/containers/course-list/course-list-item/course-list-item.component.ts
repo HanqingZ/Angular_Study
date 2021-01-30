@@ -18,8 +18,8 @@ export class CourseListItemComponent implements OnInit {
   }
 
   deleteRequest(item: CourseListItem) : void {
-    console.log("child components - deleteRequest", item.id);
     this.deleteItem.emit(item);
+    console.log("child components - deleteRequest", item.id);
   }
 
   @Output() deleteItem = new EventEmitter<CourseListItem>();
