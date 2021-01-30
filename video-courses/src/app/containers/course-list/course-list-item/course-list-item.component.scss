@@ -6,6 +6,20 @@
   background-color: #FFFFFF;
 }
 
+.futureCourse {
+  border: 1px solid #c6def1;
+}
+
+.recentCourse {
+  border: 1px solid #c9e4de;
+}
+
+.name {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
 .first-row {
   display: flex;
   flex-direction: row;
@@ -54,6 +68,12 @@ button {
   width: 12px;
   height: 12px;
   margin-right: 4px;
+}
+.starIcon {
+  margin-left: 5px;
+  width: 15px;
+  height: 15px;
+  margin-bottom: 10px;
 }
 .text {
   margin-left: 2px;

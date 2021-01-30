@@ -5,4 +5,5 @@ export interface CourseListItem {
   duration: number;
   description: string;
   authors: string;
+  isFavorite: Boolean;
 }
