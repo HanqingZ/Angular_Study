@@ -7,7 +7,7 @@
         <p>Title:</p>
         <p class="required">*required</p>
       </div>
-      <input type="text" [(ngModel)]="courseSelected.title" placeholder="Text input">
+      <input type="text" [(ngModel)]="courseSelected.name" placeholder="Text input">
     </div>
     <div class="new-course description">
       <div class="titre">
@@ -18,24 +18,24 @@
     </div>
     <div class="new-course duration">
       <div class="titre">
-        <p>Duration:</p>
+        <p>length:</p>
         <p class="required">*required</p>
       </div>
-      <input type="number" min="0" [(ngModel)]="courseSelected.duration" placeholder="minutes">
+      <input type="number" min="0" [(ngModel)]="courseSelected.length" placeholder="minutes">
     </div>
     <div class="new-course date">
       <div class="titre">
         <p>Date:</p>
         <p class="required">*required</p>
       </div>
-      <input type="date" [(ngModel)]="courseSelected.creationDate" placeholder="MM/DD/YYYY">
+      <input type="date" [(ngModel)]="courseSelected.date" placeholder="MM/DD/YYYY">
     </div>
     <div class="new-course authors">
       <div class="titre">
         <p>Authors:</p>
         <p class="required">*required</p>
       </div>
-      <input type="text" [(ngModel)]="courseSelected.authors" placeholder="Start typing">
+      <input type="text" [(ngModel)]="courseSelected.authors.name" placeholder="Start typing">
     </div>
     <div class="btn-group">
       <button class="button cancel" routerLink="/courses">Cancel</button>

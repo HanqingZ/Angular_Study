@@ -9,18 +9,21 @@ import { CoursesService } from '../../../service/courses.service'
   styleUrls: ['./new-course.component.scss']
 })
 export class NewCourseComponent implements OnInit {
-  id: Number;
+  id: number;
   isAddMode: boolean;
   pageTitle: string = "Courses";
 
   courseSelected: CourseListItem = {
     id: null,
-    title: '',
-    creationDate: '',
-    duration: null,
+    name: '',
+    date: '',
+    length: null,
     description: '',
-    authors: '',
-    isFavorite: false
+    authors: {
+      id: null,
+      name: null
+    },
+    isTopRated: false
   };
 
   constructor(
@@ -39,9 +42,9 @@ export class NewCourseComponent implements OnInit {
       if(!courseEdit) { this.router.navigate(['/debug']) }
 
       this.courseSelected = courseEdit
-      const dates = courseEdit.creationDate.split('/')
-      this.courseSelected.creationDate = `${dates[2]}-${dates[0]}-${dates[1]}`;
-      this.pageTitle = `Courses / ${this.courseSelected.title}`
+      const dates = courseEdit.date.split('/')
+      this.courseSelected.date = `${dates[2]}-${dates[0]}-${dates[1]}`;
+      this.pageTitle = `Courses / ${this.courseSelected.name}`
     } else {
       this.pageTitle = `Courses / New Course`
     }
@@ -49,13 +52,13 @@ export class NewCourseComponent implements OnInit {
 
   submitCourse() {
     let result;
-    const dates = this.courseSelected.creationDate.split('-')
-    this.courseSelected.creationDate = `${dates[1]}/${dates[2]}/${dates[0]}`;
+    const dates = this.courseSelected.date.split('-')
+    this.courseSelected.date = `${dates[1]}/${dates[2]}/${dates[0]}`;
 
-    if(!this.courseSelected.title
+    if(!this.courseSelected.name
       || !this.courseSelected.description
-      || !this.courseSelected.duration
-      || !this.courseSelected.creationDate
+      || !this.courseSelected.length
+      || !this.courseSelected.date
       || !this.courseSelected.authors
     ) {
       return console.log("Please Complete empty field")

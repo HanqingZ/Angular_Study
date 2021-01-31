@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { } from 'events';
 
 @Component({
   selector: 'app-load-more',
@@ -12,8 +13,10 @@ export class LoadMoreComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  log() {
+  log(event: MouseEvent) {
+    this.loadMore.emit(event);
     console.log("load more");
   }
 
+  @Output() loadMore = new EventEmitter<MouseEvent>();
 }

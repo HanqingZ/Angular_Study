@@ -1,9 +1,11 @@
+import { AuthorModel } from './author.model';
+
 export interface CourseListItem {
-  id: Number;
-  title: string;
-  creationDate: string;
-  duration: number;
+  id: number;
+  name: string;
+  date: string;
+  length: number;
   description: string;
-  authors: string;
-  isFavorite: Boolean;
+  authors: AuthorModel;
+  isTopRated: boolean;
 }
