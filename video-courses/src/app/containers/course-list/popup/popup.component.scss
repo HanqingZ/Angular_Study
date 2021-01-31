@@ -15,6 +15,15 @@
   box-shadow: 0 1px 2px 0 rgba(29,30,38,0.10), 0 2px 10px 0 rgba(29,30,38,0.15);
   height: 217px;
   width: 370px;
+<<<<<<< master
+<<<<<<< master
+=======
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+>>>>>>> Add popup
+=======
+>>>>>>> Add Delete popup
   color: #474A59;
 }
 
@@ -23,6 +32,10 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 18px 24px;
+<<<<<<< master
+<<<<<<< master
+=======
+>>>>>>> Add Delete popup
   height: 24px;
   font-size: 18px;
   font-weight: 600;
@@ -34,18 +47,28 @@
   padding: 0;
   background: none;
   border: none;
+<<<<<<< master
+=======
+>>>>>>> Add popup
+=======
+>>>>>>> Add Delete popup
 }
 
 .middle {
   border-top: 1px solid #CED0DB;
   border-bottom: 1px solid #CED0DB;
   padding: 18px 24px;
+<<<<<<< master
+<<<<<<< master
+=======
+>>>>>>> Add Delete popup
   height: 59px;
   font-size: 14px;
 }
 
 p {
   margin-top: 0;
+<<<<<<< master
 }
 
 .bottom {
@@ -71,4 +94,37 @@ p {
   background-color: #67A300;
   color: #FFFFFF;
   border: none;
+=======
+}
+
+.bottom {
+  padding: 18px 24px;
+>>>>>>> Add popup
+=======
+}
+
+.bottom {
+  padding: 12px 24px;
+  display: flex;
+  justify-content: flex-end;
+  height: 24px;
+}
+
+.btn {
+  height: 36px;
+  margin-left: 12px;
+  padding: 6px 12px;
+  background: none;
+  border-radius: 5px;
+}
+
+.button-cancel {
+  border: 1px solid #ACAFBF;
+}
+
+.button-submit {
+  background-color: #67A300;
+  color: #FFFFFF;
+  border: none;
+>>>>>>> Add Delete popup
 }

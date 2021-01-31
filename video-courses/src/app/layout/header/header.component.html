@@ -1,12 +1,54 @@
 <nav class="navbar bg-dark">
   <span class="navbar-brand mb-0 h1" (click)="navigateTo()">VIDEO COURSE</span>
   <span class="navbar-brand userinfo">
+<<<<<<< master
+<<<<<<< master
+<<<<<<< master
+<<<<<<< master
     <div class="login-logo" *ngIf="!currentUser; then toLogin else toLogout"></div>
     <ng-template #toLogin>
+=======
+    <div class="login" >
+>>>>>>> Add auth guard for several pages
+=======
+    <div class="login-logo" *ngIf="!user; then toLogin else toLogout"></div>
+=======
+    <div class="login-logo" *ngIf="!currentUser; then toLogin else toLogout"></div>
+>>>>>>> Modify Login logic
+    <ng-template #toLogin>
+>>>>>>> Add auth guard for add course and edit course
       <button routerLink="/login">
         <img class="icon userIcon" src="../../../assets/image/person-icon.png" alt="userIcon">
         User login
       </button>
+<<<<<<< master
+<<<<<<< master
+    </ng-template>
+    <ng-template #toLogout>
+      <img class="icon userIcon" src="../../../assets/image/person-icon.png" alt="userIcon">
+      {{currentUser}}
+    </ng-template>
+    <button (click)="logout()" *ngIf="currentUser">
+=======
+    <button routerLink="/login">
+      <img class="icon userIcon" src="../../../assets/image/person-icon.png" alt="userIcon">
+      User login
+    </button>
+    <button (click)="logout()">
+>>>>>>> Add router to login page
+      <img class="icon userIcon" src="../../../assets/image/logout-icon.png" alt="userIcon">
+      Log out
+    </button>
+=======
+    </div>
+    <div class="logout">
+      <button (click)="logout()">
+        <img class="icon userIcon" src="../../../assets/image/logout-icon.png" alt="userIcon">
+        Log out
+      </button>
+    </div>
+>>>>>>> Add auth guard for several pages
+=======
     </ng-template>
     <ng-template #toLogout>
       <img class="icon userIcon" src="../../../assets/image/person-icon.png" alt="userIcon">
@@ -16,5 +58,6 @@
       <img class="icon userIcon" src="../../../assets/image/logout-icon.png" alt="userIcon">
       Log out
     </button>
+>>>>>>> Add auth guard for add course and edit course
   </span>
 </nav>

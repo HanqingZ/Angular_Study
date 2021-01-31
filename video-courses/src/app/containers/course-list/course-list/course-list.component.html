@@ -1,7 +1,21 @@
 <div class="main">
+<<<<<<< master
+<<<<<<< master
   <app-breadcrumbs [title]="pageTitle"></app-breadcrumbs>
   <app-search-control #searchField (searchItem)="search($event)"></app-search-control>
+<<<<<<< master
+=======
+  <app-breadcrumbs></app-breadcrumbs>
+=======
+  <app-breadcrumbs [title]="pageTitle"></app-breadcrumbs>
+>>>>>>> Modify breadcrumbs value
+  <app-search-control #searchField></app-search-control>
+>>>>>>> Add Delete popup
+=======
+>>>>>>> Modify Login logic
   <app-add-course></app-add-course>
+<<<<<<< master
+<<<<<<< master
 
   <div class="emptyCourse" *ngIf="!courseItems else someData">
     <p>NO DATA, FELL FREE TO ADD NEW COURSE</p>
@@ -24,4 +38,57 @@
     (submitDelete)="removeItem($event)"
     [itemTitle]="currentItem.title"
   ></app-popup>
+=======
+  <app-course-list-item
+    *ngFor="let item of (courseItems | filterBy : searchField.searchInput) | orderBy"
+    [item]="item"
+    (deleteItem)="OnClickRemovePopup(item)">
+  </app-course-list-item>
+  <app-load-more *ngIf="courseItems.length >= 5"></app-load-more>
+  <div class="emptyCourse" *ngIf="courseItems.length === 0">
+    <p>NO DATA, FELL FREE TO ADD NEW COURSE</p>
+  </div>
+
+<<<<<<< master
+  <app-popup></app-popup>
+
+  <!-- <app-alert
+    [alertMsg]="deleteAlert"
+<<<<<<< master
+  ></app-alert>
+>>>>>>> Add service for courses
+=======
+  ></app-alert> -->
+>>>>>>> Add popup
+=======
+=======
+
+  <div class="emptyCourse" *ngIf="!courseItems else someData">
+    <p>NO DATA, FELL FREE TO ADD NEW COURSE</p>
+  </div>
+
+  <ng-template #someData>
+    <app-course-list-item
+      *ngFor="let item of (courseItems | filterBy : searchField.searchInput) | orderBy"
+      [item]="item"
+      (deleteItem)="OnClickRemovePopup(item)">
+    </app-course-list-item>
+  </ng-template>
+  <app-load-more
+    *ngIf="courseItems?.length > 0 "
+    (loadMore)="handleClickMore($event)"
+  ></app-load-more>
+
+>>>>>>> Add http request with course GET api
+  <app-popup *ngIf="deletePopup"
+    (closePopup)="cancelPopup($event)"
+    (submitDelete)="removeItem($event)"
+    [itemTitle]="currentItem.title"
+  ></app-popup>
+<<<<<<< master
+>>>>>>> Add Delete popup
+=======
+
+ <app-loading *ngIf="loading"></app-loading>
+>>>>>>> Add loading for all services all
 </div>

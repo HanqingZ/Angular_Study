@@ -2,20 +2,38 @@
   <div class="loginBox">
     <div class="mainTitle">
       <div class="title">Login</div>
+<<<<<<< master
+<<<<<<< master
       <div class="notification" *ngIf="loginFailed">Wrong e-mail or password</div>
+=======
+      <div class="notification">Wrong e-mail or password</div>
+>>>>>>> Add Login page
+=======
+      <div class="notification" *ngIf="loginFailed">Wrong e-mail or password</div>
+>>>>>>> Add authentication logic
     </div>
     <div class="login email">
       <div class="titre">
         <p>Email:</p>
         <p class="required">*required</p>
       </div>
+<<<<<<< master
+<<<<<<< master
       <input class="loginInput" type="text" [(ngModel)]="email" placeholder="Enter e-mail">
+=======
+      <input class="loginInput" type="text" value="{{email}}" placeholder="Enter e-mail">
+>>>>>>> Add Login page
+=======
+      <input class="loginInput" type="text" [(ngModel)]="email" placeholder="Enter e-mail">
+>>>>>>> Modify login logic
     </div>
     <div class="login password">
       <div class="titre">
         <p>Password:</p>
         <p class="required">*required</p>
       </div>
+<<<<<<< master
+<<<<<<< master
       <input class="loginInput" type="password" [(ngModel)]="password" placeholder="Enter password">
     </div>
     <div class="submit">
@@ -24,6 +42,25 @@
         <button class="btn button-login grey" *ngIf="loginFailed" disabled="disabled">Login</button>
         <button class="btn button-login" *ngIf="!loginFailed" (click)="requestLogin()">Login</button>
       </div>
+=======
+      <input class="loginInput" type="password" value={{password}} placeholder="Enter password">
+=======
+      <input class="loginInput" type="password" [(ngModel)]="password" placeholder="Enter password">
+>>>>>>> Modify login logic
+    </div>
+    <div class="submit">
+      <button class="forgetPassword">Forget password?</button>
+<<<<<<< master
+      <button class="btn button-login">Login</button>
+>>>>>>> Add Login page
+=======
+      <div class="btn-group">
+        <button class="btn button-login grey" *ngIf="loginFailed" disabled="disabled">Login</button>
+        <button class="btn button-login" *ngIf="!loginFailed" (click)="requestLogin()">Login</button>
+      </div>
+>>>>>>> Add authentication logic
     </div>
   </div>
+
+  <app-loading *ngIf="loading"></app-loading>
 </div>
