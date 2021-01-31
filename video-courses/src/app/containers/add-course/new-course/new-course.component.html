@@ -1,0 +1,44 @@
+<div class="main">
+  <div class="add-new-course">
+    <span>New Course</span>
+    <div class="new-course title">
+      <div class="titre">
+        <p>Title:</p>
+        <p class="required">*required</p>
+      </div>
+      <input type="text" value="{{title}}" placeholder="Text input">
+    </div>
+    <div class="new-course description">
+      <div class="titre">
+        <p>Description:</p>
+        <p class="required">*required</p>
+      </div>
+      <textarea rows="5" cols="60" name="description" placeholder="Add description"></textarea>
+    </div>
+    <div class="new-course duration">
+      <div class="titre">
+        <p>Duration:</p>
+        <p class="required">*required</p>
+      </div>
+      <input type="number" min="0" value={{duration}} placeholder="minutes">
+    </div>
+    <div class="new-course date">
+      <div class="titre">
+        <p>Date:</p>
+        <p class="required">*required</p>
+      </div>
+      <input type="date" value={{creationDate}} placeholder="MM/DD/YYYY">
+    </div>
+    <div class="new-course authors">
+      <div class="titre">
+        <p>Authors:</p>
+        <p class="required">*required</p>
+      </div>
+      <input type="text" value={{authors}} placeholder="Start typing">
+    </div>
+    <div class="btn-group">
+      <button class="button cancel" routerLink="/home">Cancel</button>
+      <button class="button submit">Save</button>
+    </div>
+  </div>
+</div>
