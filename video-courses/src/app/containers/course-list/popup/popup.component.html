@@ -1,0 +1,21 @@
+<div class="alert popup">
+  <div class="alert alert-box">
+    <div class="alert top">
+      <div class="alert title">Delete course?</div>
+      <button class="alert button-close" (click)="cancelPopup()">
+        <img src="../../../../assets/image/close.png"
+          alt="closeIcon"
+          style="width: 22px; height: 22px;"
+        >
+      </button>
+    </div>
+    <div class="alert middle">
+      <p>Are you sure you want to delete</p>
+      <p>{{itemTitle}}</p>
+    </div>
+    <div class="alert bottom">
+      <button class="alert btn button-cancel" (click)="cancelPopup()">Cancel</button>
+      <button class="alert btn button-submit" (click)="deleteItem()">Yes, delete</button>
+    </div>
+  </div>
+</div>
