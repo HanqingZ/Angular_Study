@@ -1,11 +1,18 @@
 <nav class="navbar bg-dark">
   <span class="navbar-brand mb-0 h1">VIDEO COURSE</span>
   <span class="navbar-brand userinfo">
-    <button routerLink="/login">
+    <div class="login-logo" *ngIf="!user; then toLogin else toLogout"></div>
+    <ng-template #toLogin>
+      <button routerLink="/login">
+        <img class="icon userIcon" src="../../../assets/image/person-icon.png" alt="userIcon">
+        User login
+      </button>
+    </ng-template>
+    <ng-template #toLogout>
       <img class="icon userIcon" src="../../../assets/image/person-icon.png" alt="userIcon">
-      User login
-    </button>
-    <button (click)="logout()">
+      {{user.firstName}}
+    </ng-template>
+    <button (click)="logout()" *ngIf="!user">
       <img class="icon userIcon" src="../../../assets/image/logout-icon.png" alt="userIcon">
       Log out
     </button>
