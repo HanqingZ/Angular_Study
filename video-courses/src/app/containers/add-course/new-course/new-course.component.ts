@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { CourseListItem } from 'src/app/models/course-list-item.model';
 import { CoursesService } from '../../../service/courses.service'
@@ -16,22 +16,22 @@ export class NewCourseComponent implements OnInit {
   pageTitle: string = "Courses";
   loading: boolean = true;
   courseController = new FormGroup({
-    name: new FormControl(''),
-    description: new FormControl(''),
-    length: new FormControl(''),
-    date: new FormControl(''),
-    author: new FormControl(''),
+    name: new FormControl('', Validators.required),
+    description: new FormControl('', Validators.required),
+    length: new FormControl('', Validators.required),
+    date: new FormControl('', Validators.required),
+    author: new FormControl('', Validators.required),
   });
 
   courseSelected: CourseListItem = {
     id: null,
-    name: '',
-    date: '',
-    length: null,
-    description: '',
+    name: ' ',
+    date: ' ',
+    length: 0,
+    description: ' ',
     authors: {
       id: null,
-      name: null
+      name: ' '
     },
     isTopRated: false
   };
@@ -65,6 +65,7 @@ export class NewCourseComponent implements OnInit {
   submitCourse() {
     let result;
     const dates = this.courseSelected.date.split('-')
+
     this.courseSelected.date = `${dates[1]}/${dates[2]}/${dates[0]}`;
 
     if(!this.courseSelected.name

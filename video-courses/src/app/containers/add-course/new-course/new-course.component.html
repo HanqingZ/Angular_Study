@@ -4,17 +4,20 @@
     <span>New Course</span>
 
     <div class="formControlError">
-      <p >Email need to be complete</p>
+      <p *ngIf="courseController.controls['name'].errors">Name need to be complete</p>
+      <p *ngIf="courseController.controls['date'].errors">Date need to be complete</p>
+      <p *ngIf="courseController.controls['length'].errors">Duration need to be complete</p>
+      <p *ngIf="courseController.controls['author'].errors">Author need to be complete</p>
     </div>
 
-    <!-- <form [formGroup]="courseController"> -->
+    <form [formGroup]="courseController">
       <span class="new-course title">
         <div class="titre">
           <p>Title:</p>
           <p class="required">*required</p>
         </div>
-        <!-- <input type="text" [(ngModel)]="courseSelected.name" placeholder="Text input" formControlName="name" > -->
-        <input type="text" [(ngModel)]="courseSelected.name" placeholder="Text input">
+        <input type="text" [(ngModel)]="courseSelected.name" placeholder="Text input" formControlName="name" >
+        <!-- <input type="text" [(ngModel)]="courseSelected.name" placeholder="Text input"> -->
       </span>
       <span class="new-course description">
         <div class="titre">
@@ -25,29 +28,32 @@
       </span>
       <span class="new-course duration">
         <div class="titre">
-          <p>length:</p>
+          <p>Duration:</p>
           <p class="required">*required</p>
         </div>
-        <input type="number" min="0" [(ngModel)]="courseSelected.length" placeholder="minutes">
+        <!-- <input type="number" min="0" [(ngModel)]="courseSelected.length" placeholder="minutes"> -->
+        <input type="number" min="0" [(ngModel)]="courseSelected.length" placeholder="minutes" formControlName="length">
       </span>
       <span class="new-course date">
         <div class="titre">
           <p>Date:</p>
           <p class="required">*required</p>
         </div>
-        <input type="date" [(ngModel)]="courseSelected.date" placeholder="MM/DD/YYYY">
+        <!-- <input type="date" [(ngModel)]="courseSelected.date" placeholder="MM/DD/YYYY"> -->
+        <input type="date" [(ngModel)]="courseSelected.date" placeholder="MM/DD/YYYY" formControlName="date">
       </span>
       <span class="new-course authors">
         <div class="titre">
           <p>Authors:</p>
           <p class="required">*required</p>
         </div>
-        <input type="text" [(ngModel)]="courseSelected.authors.name" placeholder="Start typing">
+        <!-- <input type="text" [(ngModel)]="courseSelected.authors.name" placeholder="Start typing"> -->
+        <input type="text" [(ngModel)]="courseSelected.authors.name" placeholder="Start typing" formControlName="author">
       </span>
-    <!-- </form> -->
+    </form>
     <div class="btn-group">
       <button class="button cancel" routerLink="/courses">Cancel</button>
-      <button class="button submit" (click)="submitCourse()">Save</button>
+      <button class="button submit" (click)="submitCourse()" [disabled]="!courseController.valid">Save</button>
     </div>
   </div>
 
